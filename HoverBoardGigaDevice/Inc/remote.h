@@ -12,6 +12,8 @@
 		#include "../Inc/remoteUartBus.h"
 	#elif defined(REMOTE_CRSF)
 		#include "../Inc/remoteCrsf.h"
+	#elif defined(REMOTE_SERVO)
+		#include "../Inc/remoteServo.h"
 	#elif defined(REMOTE_DUMMY)
 		#include "../Inc/remoteDummy.h"
 	#elif defined(REMOTE_AUTODETECT)
