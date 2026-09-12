@@ -1,0 +1,79 @@
+project:
+  description: ServoFOC application built on the existing Gen2.x GD32 firmware architecture
+
+  rte:
+    base-dir: ./RTE
+
+  output:
+    base-name: ServoFOC
+    type:
+      - elf
+      - hex
+      - map
+
+  add-path:
+    - ./Inc
+    - ./Src
+
+  components:
+    - component: CMSIS:CORE
+    - component: GigaDevice::Device:Startup
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:ADC
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:DMA
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:EXTI
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:FMC
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:FWDGT
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:GPIO
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:I2C
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:MCUDBG
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:MISC
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:OPA
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:PMU
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:RCU
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:SYSCFG
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:TIMER
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:USART
+    - component: GigaDevice::Device:GD32F1x0_StdPeripherals:WWDGT
+
+  groups:
+    - group: Gen2.x Application
+      files:
+        - file: ./Src/main.c
+        - file: ./Src/setup.c
+        - file: ./Src/it.c
+        - file: ./Src/driver.c
+        - file: ./Src/bldc.c
+        - file: ./Src/bldcBC.c
+        - file: ./Src/bldcSINE.c
+        - file: ./Src/led.c
+        - file: ./Src/comms.c
+        - file: ./Src/commsMasterSlave.c
+        - file: ./Src/commsSteering.c
+
+    - group: Servo Remote
+      files:
+        - file: ./Src/RemoteServo.c
+
+    - group: Upstream Remote Backends
+      files:
+        - file: ./Src/RemoteAdc.c
+        - file: ./Src/RemoteAutodetect.c
+        - file: ./Src/RemoteROS2.c
+        - file: ./Src/remoteCrsf.c
+        - file: ./Src/remoteDummy.c
+        - file: ./Src/remoteOptimizePID.c
+        - file: ./Src/remoteUart.c
+        - file: ./Src/remoteUartBus.c
+
+    - group: Upstream Pilot Backends
+      files:
+        - file: ./Src/PilotHoverbike.c
+        - file: ./Src/PilotUser.c
+
+    - group: Sensors and Utilities
+      files:
+        - file: ./Src/i2c.c
+        - file: ./Src/mpu6050.c
+        - file: ./Src/imuMPU6050.c
+        - file: ./Src/bmi160.c
+        - file: ./Src/SEGGER_RTT.c
