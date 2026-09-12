@@ -1,0 +1,48 @@
+solution:
+  created-for: CMSIS-Toolbox@2.14.0
+  description: Independent ServoFOC builds for the Gyroor G5 Gen2 GD32F130C8 controller variants
+
+  cdefault:
+  compiler: AC6
+
+  packs:
+    - pack: ARM::CMSIS
+    - pack: GigaDevice::GD32F1x0_DFP@3.2.1
+
+  target-types:
+    - type: G5-MASTER-HW
+      device: GigaDevice::GD32F130C8
+      define:
+        - GD32F130
+        - TARGET: 1
+        - APPLICATION_SERVO
+        - SERVO_HW_MASTER
+
+    - type: G5-SLAVE-HW
+      device: GigaDevice::GD32F130C8
+      define:
+        - GD32F130
+        - TARGET: 1
+        - APPLICATION_SERVO
+        - SERVO_HW_SLAVE
+
+  build-types:
+    - type: Debug
+      debug: on
+      optimize: debug
+
+    - type: Release
+      debug: off
+      optimize: balanced
+
+  misc:
+    - for-compiler: AC6
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
+      Link:
+        - --entry=Reset_Handler
+
+  projects:
+    - project: ServoFOC.cproject.yml
