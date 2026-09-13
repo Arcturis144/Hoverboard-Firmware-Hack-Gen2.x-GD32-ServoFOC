@@ -17,6 +17,7 @@ project:
 
   components:
     - component: CMSIS:CORE
+    - component: GigaDevice::Device:GD32F1x0_libopt
     - component: GigaDevice::Device:Startup
     - component: GigaDevice::Device:GD32F1x0_StdPeripherals:ADC
     - component: GigaDevice::Device:GD32F1x0_StdPeripherals:DMA
