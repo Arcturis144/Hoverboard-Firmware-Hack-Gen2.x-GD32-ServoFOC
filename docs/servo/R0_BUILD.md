@@ -38,25 +38,48 @@ This gives us a buildable application boundary before current-sense and FOC work
 
 These choices are scaffolding, not a claim that every hardware difference has already been characterized.
 
-## Keil Studio / CMSIS Solution
+## Primary R0 build: PlatformIO
 
-`HoverBoardGigaDevice/ServoFOC.csolution.yml` is the primary ServoFOC development solution. It uses Arm Compiler 6 and pins the GigaDevice `GD32F1x0_DFP` to version 3.2.1, matching the device pack selected by the current upstream GD32F130 uVision target.
+PlatformIO is the primary R0 build path because the upstream Gen2.x repository already carries a working GD32 PlatformIO configuration. ServoFOC extends the existing `genericGD32F130C8` environment rather than creating a separate framework/toolchain definition.
 
-The solution exposes two hardware target types:
+Two ServoFOC environments are defined in `HoverBoardGigaDevice/platformio.ini`:
 
-- `G5-MASTER-HW`
-- `G5-SLAVE-HW`
+- `servo_G5_master`
+- `servo_G5_slave`
 
-Each target resolves to `GD32F130C8`, defines `APPLICATION_SERVO`, and differs only by the physical board-variant macro. Debug and Release build types are provided.
+Both inherit the upstream GD32F130C8 board, SPL (Standard Peripheral Library), linker script, clock-selection flags, and auxiliary scripts. The MASTER environment adds `APPLICATION_SERVO` and `SERVO_HW_MASTER`; the SLAVE environment adds `APPLICATION_SERVO` and `SERVO_HW_SLAVE`.
 
-`ServoFOC.cproject.yml` selects the same GigaDevice startup and standard-peripheral component families already used by the upstream GD32F130 project and points its RTE directory at the existing `HoverBoardGigaDevice/RTE` tree. This is intentional: the existing project contains user-modified configuration copies such as the internal-oscillator 72 MHz `system_gd32f1x0.c`, which must not silently be replaced with an unrelated default.
+From `HoverBoardGigaDevice`, build with:
 
-The project emits ELF, HEX, and MAP outputs. The HEX output is intended for programming while the ELF retains symbols for source-level debugging.
+```text
+pio run -e servo_G5_master
+pio run -e servo_G5_slave
+```
+
+The unmodified upstream reference environment remains available as:
+
+```text
+pio run -e genericGD32F130C8
+```
+
+This keeps the normal Gen2.x build available alongside the ServoFOC variants.
+
+## Secondary validation: Keil Studio / CMSIS Solution
+
+`HoverBoardGigaDevice/ServoFOC.csolution.yml` and `ServoFOC.cproject.yml` remain in the repository for Arm Compiler 6 / CMSIS (Common Microcontroller Software Interface Standard) validation and source-level debugging. They pin the GigaDevice `GD32F1x0_DFP` (Device Family Pack) to version 3.2.1 and expose `G5-MASTER-HW` and `G5-SLAVE-HW` target types.
+
+The CMSIS route is no longer the blocking build path for R0. It should be brought to parity after the PlatformIO ServoFOC builds are clean. Any RTE (Run-Time Environment) update/merge notices must still be reviewed rather than blindly accepted.
+
+The standard upstream `Hoverboard.uvprojx` GD32F130 target also remains present and unchanged as an additional reference build.
 
 ## R0 build validation still required
 
-Adding the CMSIS Solution files does not by itself prove that the project builds. Before R0 is considered complete, both contexts must be opened/resolved in Keil Studio and built with the required packs installed. Any RTE update/merge notices must be reviewed rather than blindly accepted.
+Adding the PlatformIO environments does not by itself prove that the project builds. Before R0 is considered build-clean, all three relevant PlatformIO environments must compile from a clean checkout:
 
-After the first successful CMSIS-Toolbox pack resolution, commit the generated `ServoFOC.cbuild-pack.yml` so subsequent builds use the same resolved pack versions.
+```text
+genericGD32F130C8
+servo_G5_master
+servo_G5_slave
+```
 
-The standard upstream `Hoverboard.uvprojx` GD32F130 target remains present and unchanged; it is our reference build while the ServoFOC solution is validated.
+The stock GD32F130C8 build establishes upstream/toolchain parity first; the two ServoFOC builds then validate that the new application and hardware-variant selectors compile without changing normal Gen2.x behavior.
