@@ -39,21 +39,66 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 - Separate FOC math from hardware acquisition/timer code.
 - Centralize numeric types and operations so an alternate fixed-point backend can be evaluated later without scattering scaling assumptions throughout the control code.
 
-## R5 - commissioning
+## R5 - commissioning, persistent calibration, and startup validation
 
 Introduce a controlled state machine such as:
 
 - DISARMED
+- LOAD_CAL
 - CURRENT_ZERO
+- SENSOR_SANITY
+- IDENTIFY_R
+- IDENTIFY_L
+- IDENTIFY_INVERTER
 - ALIGN
 - HALL_PHASE_CAL
+- VALIDATE
+- SAVE_CAL
 - READY
 - RUN
 - FAULT
 
+Detailed motor identification is a commissioning operation, not a normal-boot operation. Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
+
+Persistent calibration should include, where available:
+
+- motor winding resistance reference (Rs), including reference temperature
+- motor winding inductance (Ls)
+- Hall/phase relationship
+- pole-pair count or equivalent motor geometry information
+- current-sensor gain and polarity
+- inverter/dead-time voltage model
+- validated motor-temperature sensor model and parameters
+
+Calibration data should have a version, integrity check, and per-domain validity/status metadata. Status should be grouped by meaningful calibration domains rather than allocating a separate flash record for every scalar. At minimum, maintain independent status/fault bits for:
+
+- current sensing
+- motor Rs
+- motor Ls
+- Hall/phase mapping
+- inverter/dead-time model
+- motor-temperature sensor model
+- overall calibration integrity/version
+
+Keep the relatively static calibration block separate from the runtime/last-start status block so normal faults do not cause unnecessary rewrites of the calibration data.
+
+On normal startup:
+
+- load and verify the saved calibration block
+- recalibrate only dynamic current-zero offsets
+- check current-sensor rails/noise and Hall plausibility
+- run low-energy plausibility checks against stored calibration values where practical
+- compare measured startup Rs against the temperature-corrected stored Rs reference
+- cross-check the PA6 motor-temperature reading against the Rs-derived expected copper temperature once the PA6 scale is validated
+- if all required checks pass, proceed directly to READY without re-running full Rs/Ls identification
+
+A disagreement between Rs and the PA6-derived temperature must be treated initially as a cross-check fault, not automatically blamed on the NTC. Possible causes include NTC wiring/sensor failure, winding/connector damage, a changed motor, or a bad resistance measurement. Fault isolation should use the other available evidence before deciding which calibration domain is invalid.
+
+A previous calibration-related fault should request revalidation of the affected domain on the next startup. Full motor identification should only be repeated when required by an invalid/missing calibration, an explicit commissioning request, a detected motor/controller change, or a previous fault that implicates the corresponding stored model.
+
 Commissioning should determine board/motor-specific values rather than importing motor-specific constants from reference projects.
 
-## R6 - current-sense quality and drift handling
+## R6 - current-sense quality, thermal cross-checking, and drift handling
 
 - noise floor and variance tracking
 - spike/fault detection
@@ -64,6 +109,8 @@ Commissioning should determine board/motor-specific values rather than importing
   - verify divider orientation/scaling and determine the NTC curve or equivalent conversion model
   - document sensor validity/failure behavior and the expected usable range
 - preserve the current-derived I^2t heating estimate independently of the measured motor-temperature path
+- use the stored Rs reference and copper temperature coefficient as an independent startup/runtime plausibility check for the motor-temperature sensor when measurement conditions are trustworthy
+- do not automatically overwrite persistent calibration from a single failed sanity check; set the relevant status/fault bit and require revalidation according to the fault policy
 
 ## R7 - torque servo
 
@@ -71,6 +118,7 @@ Commissioning should determine board/motor-specific values rather than importing
 - current, voltage, thermal, and timeout limits
 - after PA6 scaling and the motor NTC model are validated, add measured stator-temperature derating as an independent thermal limit
 - combine measured stator-temperature limiting with the current-derived I^2t model; neither path replaces the other, and the lower allowed-current limit wins
+- use calibration-domain status so an invalid sensor/model cannot silently participate in protection or control
 - predictable regenerative/braking behavior
 
 ## R8+ - outer servo loops
