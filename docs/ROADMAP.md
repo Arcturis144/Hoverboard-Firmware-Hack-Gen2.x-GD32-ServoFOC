@@ -11,6 +11,15 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 - Establish the intended Keil Studio / CMSIS build path.
 - Prove the untouched firmware baseline builds before motor-control changes.
 
+### R0 - To Do after first programming
+
+- Record how STM32CubeProgrammer identifies the GD32F130C8 target when connected through the ST-Link over SWD (Serial Wire Debug), including the reported device ID, core ID, flash size, and CPU/core description.
+- Attach with OpenOCD (Open On-Chip Debugger) using the existing PlatformIO GD32F130 configuration and record the detected TAP/CPUID, flash bank, and flash size.
+- Verify that the existing `interface/stlink.cfg` + `target/stm32f1x.cfg` path reliably connects to the actual Gyroor controller hardware.
+- Verify RTT (Real-Time Transfer) discovery and channel-0 output using the existing PlatformIO `RTT Start` and `RTT Console` tasks.
+- Verify GDB (GNU Debugger) source-level debugging over ST-Link/SWD with a basic breakpoint, halt/resume, and watched-variable test.
+- Document the known-good programmer/debugger identification and connection settings so later current-sense and FOC (Field-Oriented Control) work uses a proven monitoring path.
+
 ## R1 - current sensing foundation
 
 - Adapt the phase-current acquisition proven in PR #28 for layout 2.1.20.
