@@ -18,6 +18,7 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 - Make ADC scan ordering and software data ordering structurally consistent.
 - Add bridge-disabled startup current-zero calibration, initially using a 16-sample average.
 - Expose raw readings, zero offsets, and current-sense health for debug/telemetry.
+- Add PA6 to monitoring as a diagnostic ADC channel only. Expose raw and filtered PA6 values in debug/Live Expressions, but give PA6 no control authority at this stage.
 - No FOC output yet.
 
 ## R2 - deterministic current sample timing
@@ -57,12 +58,19 @@ Commissioning should determine board/motor-specific values rather than importing
 - noise floor and variance tracking
 - spike/fault detection
 - slow offset adaptation only during trustworthy near-zero-current conditions
-- future temperature correlation where valid sensors exist
+- characterize the provisional PA6 motor-temperature input before using it for protection:
+  - compare PA6 ADC values with direct resistance measurements on the extra motor wire
+  - record resistance and PA6 readings against measured stator temperature
+  - verify divider orientation/scaling and determine the NTC curve or equivalent conversion model
+  - document sensor validity/failure behavior and the expected usable range
+- preserve the current-derived I^2t heating estimate independently of the measured motor-temperature path
 
 ## R7 - torque servo
 
 - conservative torque/current mode
 - current, voltage, thermal, and timeout limits
+- after PA6 scaling and the motor NTC model are validated, add measured stator-temperature derating as an independent thermal limit
+- combine measured stator-temperature limiting with the current-derived I^2t model; neither path replaces the other, and the lower allowed-current limit wins
 - predictable regenerative/braking behavior
 
 ## R8+ - outer servo loops
