@@ -20,6 +20,42 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 - Verify GDB (GNU Debugger) source-level debugging over ST-Link/SWD with a basic breakpoint, halt/resume, and watched-variable test.
 - Document the known-good programmer/debugger identification and connection settings so later current-sense and FOC (Field-Oriented Control) work uses a proven monitoring path.
 
+
+### Diagnostic/telemetry and optional local display architecture
+
+Treat diagnostics as a first-class interface but keep them completely outside the motor-control authority path. The motor-control loop must never wait for a display, dashboard, logger, host computer, or other diagnostic client.
+
+Maintain a compact controller-owned telemetry snapshot containing the most useful live state, including where implemented:
+
+- motor speed, requested torque/current, measured d/q-axis current, and d/q-axis current targets
+- measured phase-A and phase-B current plus reconstructed phase-C current, with metadata identifying measured versus reconstructed values
+- Hall state, electrical angle, mechanical angle when available, selected rotor-sensor type, and rotor-sensor validity
+- battery voltage, modulation/duty state, and active current/voltage limits
+- PA6 motor-temperature data once characterized, current-derived I^2t thermal state, and the active thermal limit
+- fault flags, calibration-domain status, current-sample errors, Hall errors, encoder errors, and control-loop timing/overrun diagnostics
+
+Expose that same controller-owned diagnostic data through a transport-independent diagnostic API (Application Programming Interface) so a local display, UART (Universal Asynchronous Receiver-Transmitter) host, RTT (Real-Time Transfer) debugger, Raspberry Pi, or PC tuner all observe the same authoritative values rather than maintaining separate diagnostic implementations.
+
+Support an optional local dashboard/debug display as a non-critical client. Intended display modes include:
+
+- OFF
+- ON_DEMAND
+- ALWAYS_ON
+- FAULT_ONLY
+
+Normal dashboard/diagnostic pages should be read-only. Safety-critical parameter changes should require an explicit service/tuning mode and an appropriate controller state such as DISARMED. Parameter writes should be range-checked and state-checked by the controller, then the controller should report the value actually accepted/applied rather than allowing the client to assume a requested value was accepted.
+
+The local display may expose dashboard, current/FOC (Field-Oriented Control), thermal, battery, rotor-sensor, calibration, fault-history, and system/debug pages. Diagnostic presentation should distinguish physical measurements from derived values, for example identifying phase-C current as reconstructed when only two physical phase-current sensors are present.
+
+Persist useful fault history and freeze-frame data so a later diagnostic session can inspect the controller state at the time of a significant fault. Freeze-frame data should be bounded and selective rather than continuously writing flash.
+
+Motor operations always have priority over diagnostic traffic. PWM (Pulse-Width Modulation), ADC (Analog-to-Digital Converter) sampling, current reconstruction, FOC (Field-Oriented Control), rotor-angle acquisition needed for control, and protection/fault handling must pre-empt or defer display work. A disconnected, stalled, or malfunctioning display must not interfere with motor operation.
+
+If an SPI (Serial Peripheral Interface) encoder and SPI (Serial Peripheral Interface) display share a bus, rotor-sensor transactions receive deterministic priority and display updates are chunked/deferred into unused bus time. Display refresh rate may fall under high motor-control load without changing motor-control timing. UART (Universal Asynchronous Receiver-Transmitter) smart displays may alternatively use the external serial interface where appropriate.
+
+The display is an optional diagnostic/dashboard client, analogous to an OBD-II (On-Board Diagnostics II) scan tool or vehicle instrument cluster. ServoFOC must remain fully functional with no display connected.
+
+
 ## R1 - current sensing foundation
 
 - Adapt the phase-current acquisition proven in PR #28 for layout 2.1.20.
