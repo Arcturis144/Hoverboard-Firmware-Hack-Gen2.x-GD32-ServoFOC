@@ -31,7 +31,11 @@
 #endif
 
 uint8_t iDrivingMode = DRIVING_MODE;	//  0=pwm, 1=speed in revs*1024, (not yet: 3=torque, 4=iOdometer)
+#ifdef SERVO_BRINGUP_PASSIVE
+uint8_t bRemoteTimeout = 1; 	// fail-safe from reset for the passive first-flash image
+#else
 uint8_t bRemoteTimeout = 0; 	// any Remote can set this to 1 to disable motor (with soft brake)
+#endif
 uint8_t bPilotTimeout = 0;	// any Pilot can set this to 1 to disable motor (with soft brake)
 uint32_t iBug = 0;
 uint8_t iBug8 = -1;
@@ -170,8 +174,15 @@ int main (void)
 
 	#ifdef I2C_ENABLE
 		I2C_Init();
-		uint8_t iAddr = i2c_scanner();
-		if (iAddr>0)	dump_i2c_registers(iAddr);		// 0x68
+		#ifndef SERVO_BRINGUP_PASSIVE
+			/*
+			 * The legacy discovery path probes every I2C [inter-integrated
+			 * circuit] address by writing register 0 and then dumps registers.
+			 * Do not perform that active scan in the passive first-flash image.
+			 */
+			uint8_t iAddr = i2c_scanner();
+			if (iAddr>0)	dump_i2c_registers(iAddr);		// commonly 0x68
+		#endif
 	#endif 
 
 	#ifdef IMU_ENABLE
@@ -192,6 +203,22 @@ int main (void)
 
 	DriverInit(iDrivingMode);
 
+	#ifdef SERVO_BRINGUP_PASSIVE
+		/*
+		 * Defense in depth for R0.1: establish the non-driving state before
+		 * the startup melody/main loop and explicitly clear TIMER0's advanced-
+		 * timer main-output enable bit. RemoteServo and the main-loop timeout
+		 * continue to enforce the same state afterwards.
+		 */
+		speed = 0;
+		#ifdef MASTER_OR_SINGLE
+			steer = 0;
+		#endif
+		bRemoteTimeout = 1;
+		SetBldcInput(0);
+		SetEnable(RESET);
+		timer_automatic_output_disable(TIMER_BLDC);
+	#endif
 
 
 
