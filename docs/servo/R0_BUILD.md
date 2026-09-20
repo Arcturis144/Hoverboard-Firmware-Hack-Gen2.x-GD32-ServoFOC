@@ -76,9 +76,11 @@ The CMSIS route is no longer the blocking build path for R0. It should be brough
 
 The standard upstream `Hoverboard.uvprojx` GD32F130 target also remains present and unchanged as an additional reference build.
 
-## R0 build validation still required
+## R0 build validation
 
-Adding the PlatformIO environments does not by itself prove that the project builds. Before R0 is considered build-clean, all three relevant PlatformIO environments must compile from a clean checkout:
+The GitHub Actions PlatformIO build workflow is now present and the first CI [continuous integration] run successfully compiled both ServoFOC hardware variants from a clean runner. The upstream-reference environment should still be used when checking toolchain parity after major low-level changes.
+
+The relevant environments are:
 
 ```text
 genericGD32F130C8
@@ -86,6 +88,6 @@ servo_G5_master
 servo_G5_slave
 ```
 
-The stock GD32F130C8 build establishes upstream/toolchain parity first; the two ServoFOC builds then validate that the new application and hardware-variant selectors compile without changing normal Gen2.x behavior.
+The stock GD32F130C8 build establishes upstream/toolchain parity; the two ServoFOC builds validate the new application and hardware-variant selectors. The R0.1 first-flash behavior and debugger-visible monitor are documented in `R0_BRINGUP.md`.
 
 For later low-level timer/ADC [analog-to-digital converter] changes, hoverboardhavoc `regtrace` at `673e6b005c8272d0bf9ccd2b63938630ad4ab70e` is a useful verification tool/reference. It compares peripheral register programming across implementations and already contains GD32F1x0 timer, ADC [analog-to-digital converter], DMA [direct memory access], USART [universal synchronous/asynchronous receiver-transmitter], flash, watchdog, and clock work relevant to this firmware family.

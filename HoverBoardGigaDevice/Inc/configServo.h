@@ -4,14 +4,14 @@
 /*
  * ServoFOC application configuration.
  *
- * R0 intentionally keeps the proven upstream BLDC_SINE motor backend.  The
+ * R0 intentionally keeps the proven upstream BLDC_SINE motor backend. The
  * servo build is selected with APPLICATION_SERVO plus exactly one physical
  * board variant:
  *
  *   SERVO_HW_MASTER
  *   SERVO_HW_SLAVE
  *
- * MASTER/SLAVE here describe PCB hardware variants only.  Both builds run as
+ * MASTER/SLAVE here describe PCB hardware variants only. Both builds run as
  * independent SINGLE controllers and do not use the Gen2.x master/slave motor
  * command relationship.
  */
@@ -29,7 +29,7 @@
 /* Gyroor G5 / OLSZ OL20180703-V4.1 family, Gen2.x layout 2.1.20. */
 #define LAYOUT 20
 
-/* R0 uses the existing motor backend.  FOC is introduced in a later revision. */
+/* R0 uses the existing motor backend. FOC [field-oriented control] comes later. */
 #define BLDC_SINE
 #define DRIVING_MODE 0
 
@@ -39,20 +39,21 @@
 #define CELL_LOW_DEAD 3.0
 #define DC_CUR_LIMIT 15
 
-/*
- * Every ServoFOC board is logically independent.  SINGLE selects the local
- * control path and deliberately leaves MASTER and SLAVE undefined.
- */
+/* Every ServoFOC board is logically independent. */
 #define SINGLE
 #define MASTER_OR_SINGLE
 
 /*
- * The former master/slave PA2/PA3 UART is repurposed as the direct supervisory
- * servo link.  R0's RemoteServo implementation is deliberately command-locked
- * and keeps the motor disabled until a real protocol is implemented.
+ * The former master/slave PA2/PA3 UART [universal asynchronous receiver-
+ * transmitter] is the reserved supervisory servo link.
+ * R0.1 is a passive bring-up image and accepts no motion commands.
  */
 #define REMOTE_SERVO
 #define REMOTE_USART 1
+#define SERVO_BRINGUP_PASSIVE
+
+/* Mirror the three assumed Hall inputs on the three status LEDs. */
+#define TEST_HALL2LED
 
 /* Required by the upstream default pilot path used during R0. */
 #define SPEED_COEFFICIENT -1
@@ -60,8 +61,8 @@
 
 /*
  * Upstream explicitly notes DISABLE_BUTTON for using slave hardware as an
- * independent/master-like controller.  This also prevents use of SELF_HOLD on
- * that hardware variant until its power-control differences are documented.
+ * independent/master-like controller. This also suppresses SELF_HOLD until
+ * the MASTER/SLAVE hardware differences are explicitly documented.
  */
 #ifdef SERVO_HW_SLAVE
 	#define DISABLE_BUTTON
