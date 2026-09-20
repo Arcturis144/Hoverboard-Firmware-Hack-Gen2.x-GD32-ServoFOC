@@ -127,8 +127,7 @@ Do not run the complete existing `RemoteAutodetect` state machine during normal 
 
 The Hall-order logic is valuable in two forms: commissioning may actively determine the saved Hall/phase relationship, while runtime should reuse only passive invariants such as rejection/counting of `000` and `111`, one-bit transition validation, expected sequence/direction, transition timing, and missed/duplicate/illegal-transition counters.
 
-Detailed motor identification is a commissioning operation, not a normal-boot operation.
- Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
+Detailed motor identification is a commissioning operation, not a normal-boot operation. Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
 
 Persistent calibration should include, where available:
 
