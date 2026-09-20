@@ -14,6 +14,30 @@ Supervisory MCU
 
 Each axis must be able to boot, calibrate, receive commands, run its local control loops, protect itself, report telemetry, and enter a safe state without depending on another motor board.
 
+## Commissioning, runtime monitoring, and persistent calibration
+
+ServoFOC separates active discovery from normal operation:
+
+```text
+ServoFOC
+  |-- CommissioningDiscovery
+  |     active/low-energy tests while disarmed
+  |     pin and Hall mapping
+  |     phase-current validation
+  |     motor R/L and inverter identification
+  |
+  |-- RuntimeMonitor
+  |     passive Hall/current/thermal/command checks
+  |     calibration plausibility and fault counters
+  |
+  `-- CalibrationStore
+        versioned static calibration
+        per-domain validity/status
+        separate runtime/last-start status
+```
+
+The existing Gen2.x `RemoteAutodetect` implementation is a source of commissioning algorithms only. Its complete state machine must not execute as a background runtime monitor because several stages reconfigure pins or actively excite the motor. Runtime monitoring reuses only passive invariants and the saved result of commissioning.
+
 ## Responsibility split
 
 ### Servo-board MCU
@@ -46,6 +70,25 @@ Application-specific behavior belongs above the servo drive. Examples include:
 
 Useful Gen2.x functionality may be reused on the supervisory MCU where appropriate; it is not considered deleted merely because it is excluded from the servo-board build.
 
+## Command ingress and failsafe boundary
+
+Every transport feeds one controller-owned command validator. UART [universal asynchronous receiver-transmitter], iBUS [FlySky serial receiver protocol], a Raspberry Pi host, an ESP32 [Espressif 32-bit microcontroller] bridge, or a later network interface must not bypass the same safety boundary.
+
+The acceptance chain is:
+
+```text
+frame received
+  -> framing/checksum valid
+  -> structure/version valid
+  -> command physically plausible and in range
+  -> command/link fresh enough
+  -> current controller state permits the command
+  -> global current/voltage/thermal/speed limits
+  -> local servo target
+```
+
+A corrupted but checksum-valid command that is physically implausible is rejected into a zero/safe request rather than clamped into a large valid request. Telemetry records invalid-command counters and age of the last valid command/link. This follows useful failure-handling patterns found in the WestlingPi and Homobonus Gen2.x forks while keeping the implementation transport-independent.
+
 ## Command modes
 
 The reusable servo core is intended to support:
@@ -69,6 +112,10 @@ The stock three digital Hall sensors are the minimum supported position source. 
 ## Park / hold behavior
 
 Park/hold is not defined as maximum continuous stationary torque. The controller should use only the torque needed to prevent unwanted motion, with a deadband and thermal/current limits. Hall-edge position correction can provide coarse hold behavior even before an external encoder is fitted. A supervisory IMU may supply slope/load feed-forward for applications such as a mower.
+
+## Reference implementations
+
+The architecture intentionally mines proven pieces from external projects without making them production dependencies. The primary current references are the hoverboardhavoc layout-2.1.20 FOC [field-oriented control] branch, the hoverboardhavoc GD32F130C8 IMU [inertial measurement unit]/PlatformIO work, Jodaille/EFeru iBUS [FlySky serial receiver protocol] handling, WestlingPi/Homobonus communication safety, lucai11 RemoteAutodetect/ADC [analog-to-digital converter] work, and HUGS [Hoverboard Utility Gateway System] servo/robot concepts. Exact pinned revisions and licensing notes are maintained in `docs/provenance/SOURCES.md`.
 
 ## Upstream integration
 

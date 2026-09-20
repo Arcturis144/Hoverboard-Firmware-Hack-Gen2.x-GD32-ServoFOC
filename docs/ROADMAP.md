@@ -6,6 +6,7 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 
 - Current RoboDurden Gen2.x GD32 source remains functionally unchanged.
 - Establish repository documentation and provenance.
+- Maintain a dated survey of the RoboDurden fork network and pin exact useful external references before adaptation.
 - Preserve MASTER/SLAVE as hardware variants, not servo control roles.
 - Establish the independent-servo application design.
 - Establish the intended Keil Studio / CMSIS build path.
@@ -56,9 +57,22 @@ If an SPI (Serial Peripheral Interface) encoder and SPI (Serial Peripheral Inter
 The display is an optional diagnostic/dashboard client, analogous to an OBD-II (On-Board Diagnostics II) scan tool or vehicle instrument cluster. ServoFOC must remain fully functional with no display connected.
 
 
+## Cross-cutting source-integration plan
+
+Use external projects as targeted references rather than as a replacement firmware stack:
+
+- hoverboardhavoc `foc-reimplement-from-spec-tidy` at `7650dffafb5b1d3c816e22fff66ebf65ae7fb138`: primary Gen2.x/layout-2.1.20 FOC [field-oriented control] reference. Mine the pure math, Hall interpolation/PLL [phase-locked loop], PI [proportional-integral] current-loop structure, DTC [dead-time compensation], PWM [pulse-width modulation]-relative current sampling, and host tests. Do not import its motor-specific tuning constants as defaults.
+- hoverboardhavoc `hoverboard-gen2.1-hack-GD-imu` at `14e01f24ee5f5df9393a89d0ead54363e3210e9b` plus `HoverboardImu` at `b7682c98295b05ca43adcbd302954bd9134ecc0c`: board-family IMU [inertial measurement unit] and GD32F130C8 PlatformIO evidence. Treat the reported I²C [inter-integrated circuit] behavior and MPU6050-like device observations as external corroboration until checked on our boards.
+- WestlingPi `debug-safety-limit` at `32eafc60ae4377d24e3c7824f92bed0fd5fada89` and Homobonus `spatialrag-agv` at `4986a0e4de308b395b9bcce400c299c547e20985`: communication sanity, stale-link diagnostics, and host telemetry/parser references.
+- Jodaille `hoverboard-sideboard-hack-GD` at `c063fdf2e1b0e11f2db70040c5e6d32e5b79019f`: iBUS [FlySky serial receiver protocol] packet/checksum/timeout handling reference for the FS-iA6B receiver path.
+- lucai11 `inserted_adc` at `814efb694a7799d5d288394addb2f6aaf785de43`: RemoteAutodetect size reduction and timer-triggered inserted ADC [analog-to-digital converter] reference. Its generic `CURRENT_DC` assumptions are not accepted for layout 2.1.20 without hardware evidence.
+- HUGS [Hoverboard Utility Gateway System], YujiKF, hoverboardhavoc joystick tooling, adj00080, and filagyuri projects remain secondary references for servo behavior, host control, wireless bridges, troubleshooting, and safety patterns.
+
+The full source register and fork survey are authoritative for exact provenance: `docs/provenance/SOURCES.md` and `docs/provenance/FORK_SURVEY.md`.
+
 ## R1 - current sensing foundation
 
-- Adapt the phase-current acquisition proven in PR #28 for layout 2.1.20.
+- Adapt the phase-current acquisition proven in PR #28 for layout 2.1.20, cross-checking against hoverboardhavoc commits `b363f81522cfeb4ee0669b4da55b880f96f8ceac` and `68a60ef7d8b2b78e510abd1c045e1c277a15111c`.
 - Confirm PB0/PA0 mapping for the target hardware before enabling closed-loop control.
 - Make ADC scan ordering and software data ordering structurally consistent.
 - Add bridge-disabled startup current-zero calibration, initially using a 16-sample average.
@@ -68,7 +82,7 @@ The display is an optional diagnostic/dashboard client, analogous to an OBD-II (
 
 ## R2 - deterministic current sample timing
 
-- Adapt PR #28 PWM-relative ADC triggering for the known hardware.
+- Adapt PR #28 PWM [pulse-width modulation]-relative ADC [analog-to-digital converter] triggering for the known hardware, comparing the timer/trigger approach with hoverboardhavoc `b363f81522cfeb4ee0669b4da55b880f96f8ceac` and lucai11 `814efb694a7799d5d288394addb2f6aaf785de43`.
 - Keep the timing implementation target-specific rather than applying unverified timer register changes to every supported MCU.
 - Validate sample placement and trigger count on hardware.
 
@@ -79,7 +93,7 @@ The display is an optional diagnostic/dashboard client, analogous to an OBD-II (
 
 ## R4 - FOC core
 
-- Adapt the useful PR #28 FOC implementation onto current upstream.
+- Adapt the useful PR #28 FOC [field-oriented control] implementation onto current upstream, using hoverboardhavoc `d7162fb433446dc6b219d329249c096c03de51c7` and `145674d49d60170646adcac19da0ff0a76debf05` as primary implementation references rather than as drop-in code.
 - Preserve host-side mathematical tests.
 - Separate FOC math from hardware acquisition/timer code.
 - Centralize numeric types and operations so an alternate fixed-point backend can be evaluated later without scattering scaling assumptions throughout the control code.
@@ -103,7 +117,18 @@ Introduce a controlled state machine such as:
 - RUN
 - FAULT
 
-Detailed motor identification is a commissioning operation, not a normal-boot operation. Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
+Commissioning is split into three explicit responsibilities:
+
+- `CommissioningDiscovery`: active, intentionally invasive tests used only while disarmed/commissioning. Reuse selected ideas from `RemoteAutodetect` for candidate-pin discovery, Hall sequence/mapping, phase-current validation, and board identification.
+- `RuntimeMonitor`: passive checks only while operating, including legal Hall state, one-bit Hall transitions, expected saved Hall sequence/direction, transition timing, current-sensor health, PA6 monitoring, command freshness, and calibration plausibility.
+- `CalibrationStore`: versioned persistent calibration plus per-domain validity/status, with runtime/last-start status stored separately to avoid unnecessary flash rewrites.
+
+Do not run the complete existing `RemoteAutodetect` state machine during normal operation. It changes GPIO [general-purpose input/output] modes, can actively drive the motor, and includes board-generic assumptions. In particular, its `CURRENT_DC` discovery/test path must not be allowed to classify PA6 as a DC [direct current] bus-current sensor on layout 2.1.20. PA6 remains diagnostic/unclassified until characterized.
+
+The Hall-order logic is valuable in two forms: commissioning may actively determine the saved Hall/phase relationship, while runtime should reuse only passive invariants such as rejection/counting of `000` and `111`, one-bit transition validation, expected sequence/direction, transition timing, and missed/duplicate/illegal-transition counters.
+
+Detailed motor identification is a commissioning operation, not a normal-boot operation.
+ Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
 
 Persistent calibration should include, where available:
 
@@ -174,5 +199,9 @@ Commissioning should determine board/motor-specific values rather than importing
 - optional wheel/load encoder and index input
 - impedance-style behavior for haptic/large-servo applications
 - stable versioned command/telemetry protocol
+- validate every external command through framing/checksum, structural checks, physical plausibility/range checks, freshness/timeout, controller-state permission, and the global safety limiter before it can create torque
+- reject implausible commands to zero/safe state rather than merely clamping a corrupted large command into the valid range
+- expose last-valid-command/link age and command-error counters in telemetry
+- adapt the proven iBUS [FlySky serial receiver protocol] parser/checksum/timeout pattern for an optional direct FS-iA6B service/RC [radio control] input behind the same transport-independent command interface
 
 A future dedicated current-sampling path using inserted ADC channels may be evaluated after the PR #28 timing path is working and measured on the target board.

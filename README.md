@@ -13,7 +13,14 @@ The project retains the upstream firmware and its normal hoverboard applications
 - Keep hardware-specific timing, sensing, and pin mapping below reusable control interfaces so additional hoverboard boards can be supported later.
 - Preserve compatibility with upstream Gen2.x development wherever practical.
 
+## Reference-source policy
+
+The public fork network around the RoboDurden Gen2.x GD32 firmware was surveyed on 2026-09-19. Useful work is treated as evidence and reference material, not as code to import wholesale. Exact repositories, branches, commits, licensing notes, and intended reuse are tracked in `docs/provenance/SOURCES.md`; the fork-by-fork survey is in `docs/provenance/FORK_SURVEY.md`.
+
+The highest-value references currently include the hoverboardhavoc layout-2.1.20 FOC [field-oriented control] work, its GD32F130C8 IMU [inertial measurement unit] and PlatformIO bring-up, WestlingPi and Homobonus communication-safety work, Jodaille/EFeru iBUS [FlySky serial receiver protocol] parsing, lucai11 RemoteAutodetect/ADC [analog-to-digital converter] work, and HUGS [Hoverboard Utility Gateway System] robot/servo concepts. Board-specific constants and assumptions are always revalidated on the actual target hardware.
+
 ## Development policy
+
 
 `main` is intended to remain close to RoboDurden upstream. Active servo work is developed on dedicated branches, beginning with `servo/r0-baseline`.
 
@@ -25,6 +32,7 @@ See:
 - `docs/ROADMAP.md`
 - `docs/hardware/README.md`
 - `docs/provenance/SOURCES.md`
+- `docs/provenance/FORK_SURVEY.md`
 - `external/README.md`
 
 The upstream `ai_guidelines*.md` files remain authoritative for how new firmware code should fit the Gen2.x C architecture.

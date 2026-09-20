@@ -42,6 +42,10 @@ These choices are scaffolding, not a claim that every hardware difference has al
 
 PlatformIO is the primary R0 build path because the upstream Gen2.x repository already carries a working GD32 PlatformIO configuration. ServoFOC extends the existing `genericGD32F130C8` environment rather than creating a separate framework/toolchain definition.
 
+This choice is additionally corroborated by hoverboardhavoc `hoverboard-gen2.1-hack-GD-imu` commit `14e01f24ee5f5df9393a89d0ead54363e3210e9b`, which was ported specifically to a split GD32F130C8 hoverboard motherboard and uses PlatformIO. That project references hoverboardhavoc `gd32-pio-spl-package` branch `hoverboardhavoc/add__PIO_DONT_SET_CLOCK_SOURCE__`, pinned here at `8849cb2af35f16431734d9e9c101de648f54f061`, to avoid the framework overriding the intended clock source.
+
+These are build-system references, not automatic production dependencies. ServoFOC should only pin or vendor a modified SPL [standard peripheral library] package after comparing its behavior with the current upstream package and documenting why the change is required.
+
 Two ServoFOC environments are defined in `HoverBoardGigaDevice/platformio.ini`:
 
 - `servo_G5_master`
@@ -83,3 +87,5 @@ servo_G5_slave
 ```
 
 The stock GD32F130C8 build establishes upstream/toolchain parity first; the two ServoFOC builds then validate that the new application and hardware-variant selectors compile without changing normal Gen2.x behavior.
+
+For later low-level timer/ADC [analog-to-digital converter] changes, hoverboardhavoc `regtrace` at `673e6b005c8272d0bf9ccd2b63938630ad4ab70e` is a useful verification tool/reference. It compares peripheral register programming across implementations and already contains GD32F1x0 timer, ADC [analog-to-digital converter], DMA [direct memory access], USART [universal synchronous/asynchronous receiver-transmitter], flash, watchdog, and clock work relevant to this firmware family.
