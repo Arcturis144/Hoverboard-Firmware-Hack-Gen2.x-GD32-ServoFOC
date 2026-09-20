@@ -1,0 +1,48 @@
+name: ServoFOC PlatformIO build
+
+on:
+  push:
+    branches:
+      - "servo/**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment:
+          - servo_G5_master
+          - servo_G5_slave
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PlatformIO
+        run: python -m pip install --upgrade platformio
+
+      - name: Build ${{ matrix.environment }}
+        working-directory: HoverBoardGigaDevice
+        run: pio run -e ${{ matrix.environment }}
+
+      - name: Stage firmware
+        shell: bash
+        run: |
+          mkdir -p artifacts/${{ matrix.environment }}
+          cp HoverBoardGigaDevice/.pio/build/${{ matrix.environment }}/firmware.bin artifacts/${{ matrix.environment }}/
+          cp HoverBoardGigaDevice/.pio/build/${{ matrix.environment }}/firmware.elf artifacts/${{ matrix.environment }}/
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.environment }}
+          path: artifacts/${{ matrix.environment }}
+          if-no-files-found: error
