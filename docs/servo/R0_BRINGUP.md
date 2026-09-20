@@ -6,7 +6,7 @@ R0.1 is the first ServoFOC image intended to be programmed onto the GD32F130C8 s
 
 This build is intentionally non-driving.
 
-`RemoteServo.c` forces speed and steer to zero, asserts the remote timeout, calls `SetBldcInput(0)`, and calls `SetEnable(RESET)` every update. Incoming UART [universal asynchronous receiver-transmitter] bytes are ignored. The existing PWM [pulse-width modulation] and ADC [analog-to-digital converter] infrastructure still initializes so timing and battery acquisition can be observed, but the motor bridge is not granted control authority.
+`bRemoteTimeout` starts asserted in the passive build. After PWM [pulse-width modulation] initialization, R0.1 explicitly commands zero, clears the software bridge-enable state, and clears TIMER0's advanced-timer main-output enable before the startup melody/main loop. `RemoteServo.c` then continuously forces speed and steer to zero, asserts the remote timeout, calls `SetBldcInput(0)`, and calls `SetEnable(RESET)` every update. Incoming UART [universal asynchronous receiver-transmitter] bytes are ignored. The existing PWM [pulse-width modulation] and ADC [analog-to-digital converter] infrastructure still initializes so timing and battery acquisition can be observed, but the motor bridge is not granted control authority.
 
 This is a board bring-up image, not a motor-test image.
 
@@ -15,6 +15,8 @@ This is a board bring-up image, not a motor-test image.
 `TEST_HALL2LED` is enabled for the ServoFOC build. The three status LEDs mirror the assumed Hall A/B/C inputs. With the motor unpowered by firmware, slowly rotating the wheel by hand should step through legal Hall combinations.
 
 The normal startup melody remains a useful indication that the MCU [microcontroller unit], clock, watchdog, GPIO [general-purpose input/output], and main loop reached normal execution.
+
+The inherited broad I²C [inter-integrated circuit] address scanner/register dump is suppressed in `SERVO_BRINGUP_PASSIVE`. That legacy scanner writes register 0 while probing addresses, so it is inappropriate for a passive first-flash image. R0.1 initializes the known I²C [inter-integrated circuit] bus and IMU [inertial measurement unit] driver without performing that discovery sweep.
 
 ## SWD [serial wire debug] monitor
 
