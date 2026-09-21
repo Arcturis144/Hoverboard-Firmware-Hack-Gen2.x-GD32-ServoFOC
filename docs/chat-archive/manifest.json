@@ -1,0 +1,406 @@
+{
+  "scope": "40 recovered project-generated artifacts; not an exhaustive conversation export",
+  "baseline_commit": "811e4142ad706f47e76bedcbe144b026feb0da9a",
+  "artifacts": [
+    {
+      "original_name": "ServoFOC_R0.1_G5_SLAVE.elf",
+      "created_at": "2026-09-20T04:18:09.227686Z",
+      "source_file_id": "libfile_b00fcad57ea48191b2b4ddd1511c592f",
+      "bytes": 173936,
+      "sha256": "e7d57fc72c4e63a8172ef5c961f0317833d0fe69ee4994b0c7f3c3f34b38cc54",
+      "git_blob_sha": "b28a250a662f23c7e86a9dfe618147315a8b51c7",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/firmware-snapshots/ServoFOC_R0.1_G5_SLAVE.elf"
+    },
+    {
+      "original_name": "ServoFOC_R0.1_G5_SLAVE.bin",
+      "created_at": "2026-09-20T04:18:08.427944Z",
+      "source_file_id": "libfile_14a7610714a881918a73c25ae4dd3c82",
+      "bytes": 19520,
+      "sha256": "4be25c7eb3cb7de48263ab07f3b96f533abd90e42a068149d797baac702b29d2",
+      "git_blob_sha": "38706d5f7221ae4eabceec2577a3f2ee0e52d027",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/firmware-snapshots/ServoFOC_R0.1_G5_SLAVE.bin"
+    },
+    {
+      "original_name": "ServoFOC_R0.1_G5_MASTER.elf",
+      "created_at": "2026-09-20T04:18:07.488942Z",
+      "source_file_id": "libfile_8d3738c4a41c819197c7c032edb6be10",
+      "bytes": 174092,
+      "sha256": "9c904e8a6b6e411bbeb1d4da42c84b37b5f48769fbd7ee808ac29f563a9c8c90",
+      "git_blob_sha": "b64d39037abc09805db2153efa57d8604b1343ca",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/firmware-snapshots/ServoFOC_R0.1_G5_MASTER.elf"
+    },
+    {
+      "original_name": "ServoFOC_R0.1_G5_MASTER.bin",
+      "created_at": "2026-09-20T04:18:06.354084Z",
+      "source_file_id": "libfile_ed28ac805d7c81919008790722693ad5",
+      "bytes": 19672,
+      "sha256": "4014e369dbd5bf3d29dd555a76f133a25b5724f4a6d5c5c23365d7d8bf4724bd",
+      "git_blob_sha": "02e74c737da77a69605e9257f2eeacd9e244f078",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/firmware-snapshots/ServoFOC_R0.1_G5_MASTER.bin"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+      "created_at": "2026-09-12T07:00:17.186273Z",
+      "source_file_id": "libfile_9eb5dff1eacc819182aee4bdfc8b2905",
+      "bytes": 36484,
+      "sha256": "75d9a76cd9ccf880f230133c6f4c7cf4b1ffbaea661c0dfe7f7109359533228a",
+      "git_blob_sha": "03928e289380e0e5df263e5303cc4e16a03e8a45",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+      "created_at": "2026-09-10T08:54:50.455692Z",
+      "source_file_id": "libfile_b8b5f9d35dd481919f02854962bf6c67",
+      "bytes": 37724,
+      "sha256": "f5506489907bc06d9304318fc93bc280947de81a9e9245b89c901b71c5edc369",
+      "git_blob_sha": "23d17f74f9b5053f9711a9614916927b0142e636",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+      "created_at": "2026-09-10T08:15:52.301459Z",
+      "source_file_id": "libfile_a585bf17aa988191835c32c6cf25760d",
+      "bytes": 34752,
+      "sha256": "383ec7e674b5c36a516c2d19bd6803cc13d7d0dea2d9c652d25d67e5d3b93bde",
+      "git_blob_sha": "f1d7d8bb7d9f84cb166daa7fd84806833bb7f26d",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip"
+    },
+    {
+      "original_name": "README_PHASE3.md",
+      "created_at": "2026-09-10T07:53:26.664658Z",
+      "source_file_id": "libfile_e22b112e9f088191a8390ca9351053b7",
+      "bytes": 3712,
+      "sha256": "1daa5af1cc6ac558d44196587fb312280bdfc90a1f91614dff97961e18b95d07",
+      "git_blob_sha": "300d800fc39a3a70847912498546bd3687c0397e",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/README_PHASE3.md"
+    },
+    {
+      "original_name": "AI_GUIDELINES_AUDIT.md",
+      "created_at": "2026-09-10T07:53:22.307393Z",
+      "source_file_id": "libfile_96ba7e5a7720819197af95520ed51829",
+      "bytes": 5938,
+      "sha256": "e3cb23f1b14c77c296d23e8932718889a1c9b5fe8b408a883b950fc70688c176",
+      "git_blob_sha": "6de79ec5c8712c1f18e311b06857170a3b55749a",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/AI_GUIDELINES_AUDIT.md"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+      "created_at": "2026-09-10T07:53:21.609782Z",
+      "source_file_id": "libfile_72f1fb31071481918f8539e000423f9a",
+      "bytes": 43577,
+      "sha256": "b847e269663db5a01df8cef6ca372c37a5acaad5662145f4f5127e78410ba88c",
+      "git_blob_sha": "eda2274c1989637226aed4f7d50459d11ad3ff8b",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+      "created_at": "2026-09-10T06:19:12.413721Z",
+      "source_file_id": "libfile_6fa58602dc748191a7cac996eeeed800",
+      "bytes": 36305,
+      "sha256": "b3bdaa0db7237ae5f3037791bc8b392d8d84d82c5d5251eea3eb4102b467e32c",
+      "git_blob_sha": "43cbadd8838b7431edd0a7ab9260f5d9e09bc371",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+      "created_at": "2026-09-10T05:58:33.109696Z",
+      "source_file_id": "libfile_7b2fa047e2648191bd76bdc73b1858f7",
+      "bytes": 21530,
+      "sha256": "39dd92916f4c04a0df323ecb2468e5a0236adc7db87293c76eee577928d850e5",
+      "git_blob_sha": "cc3b9bc25108258fc1ac300e352e4cbaa1bd60e4",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+      "created_at": "2026-09-10T04:06:49.897601Z",
+      "source_file_id": "libfile_38461c2230cc8191b5bd23a475942f97",
+      "bytes": 47711,
+      "sha256": "775954b78550425d94a20a5ea9065600e1185b9fe55bc34660c21a7cd8233ffe",
+      "git_blob_sha": "45adfeea286164f358140b24131bf731743248a4",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip"
+    },
+    {
+      "original_name": "README_CUBEIDE.md",
+      "created_at": "2026-09-06T03:49:56.023471Z",
+      "source_file_id": "libfile_f7067cb82b7c8191a5e6b8514906aa3e",
+      "bytes": 11874,
+      "sha256": "a340b45894241b3c06afbcff4767f935bd40194377146e48b7b6647c8415b727",
+      "git_blob_sha": "155d45d78bdda7554bcaef424907490ddd872dcb",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/README_CUBEIDE.md"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE.zip",
+      "created_at": "2026-09-06T03:49:55.322281Z",
+      "source_file_id": "libfile_218c7492fa408191b635689d8916cd8f",
+      "bytes": 47711,
+      "sha256": "775954b78550425d94a20a5ea9065600e1185b9fe55bc34660c21a7cd8233ffe",
+      "git_blob_sha": "45adfeea286164f358140b24131bf731743248a4",
+      "status": "duplicate",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip"
+    },
+    {
+      "original_name": "Gyroor_G5_CubeMonitor_Phase3.zip",
+      "created_at": "2026-09-05T21:37:53.620644Z",
+      "source_file_id": "libfile_55dbeaefbe488191883fb23e44f7b2b3",
+      "bytes": 10731,
+      "sha256": "9ca410b99b82cc96bc40bffe58fc683a484a7975521054d4c092ef5484ca0677",
+      "git_blob_sha": "562f6edadd7c6410372e6e34636748677f413d3f",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase3.zip",
+      "created_at": "2026-09-05T21:28:27.456719Z",
+      "source_file_id": "libfile_a8499dee7b088191906dc3039bc13224",
+      "bytes": 21530,
+      "sha256": "39dd92916f4c04a0df323ecb2468e5a0236adc7db87293c76eee577928d850e5",
+      "git_blob_sha": "cc3b9bc25108258fc1ac300e352e4cbaa1bd60e4",
+      "status": "duplicate",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase2.zip",
+      "created_at": "2026-09-05T14:58:26.210272Z",
+      "source_file_id": "libfile_394f7fb3c0188191bde6fc944b527167",
+      "bytes": 20476,
+      "sha256": "78bbfc6cbd0e8ba062fb3fc5d22e6e0378dd66da4d6b0267c80947305f91a384",
+      "git_blob_sha": "54f10d9b6435ae82347efcab77d47bd1d85d1fcc",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_Gen2_FOC_Phase1.zip",
+      "created_at": "2026-09-02T20:22:38.591239Z",
+      "source_file_id": "libfile_4f0f1910a7488191b5cd9892173e1ab3",
+      "bytes": 14935,
+      "sha256": "2a5714b1b86fbd7e01a63806e65d65b81dc8a41bb79f8ac8d40c431eef39604e",
+      "git_blob_sha": "465002aa37efaee1bca958ee23ac507cff7a8f6b",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_MITM_v9_C6.zip",
+      "created_at": "2026-09-01T18:20:53.650322Z",
+      "source_file_id": "libfile_20c5918b74e481919847aaedd64d5e18",
+      "bytes": 4740,
+      "sha256": "72b8843a956addf07e2a30593801a79398712d90b430f9c8ed044f2e74446fc9",
+      "git_blob_sha": "593c7e6e2e61874fd8922882fdf5dc0dc17e895e",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_MITM_v9_C6.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.zip",
+      "created_at": "2026-09-01T08:48:51.876906Z",
+      "source_file_id": "libfile_6a22940346f48191b709ad3adbcfde27",
+      "bytes": 5557,
+      "sha256": "7c8b444b34c4f9b9e7d5930e48deb409da5170acd34e038492c0893d0419a571",
+      "git_blob_sha": "65a37829af7c1e9b6653cd4c4c8611ddb3454e4f",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.zip",
+      "created_at": "2026-09-01T06:57:00.761073Z",
+      "source_file_id": "libfile_15a46bf8d12c8191adc3950ac4061656",
+      "bytes": 5146,
+      "sha256": "2a1989764bbf607d204ed0745e70f3c588e117d26414c8d86d8c27f5f0f75cae",
+      "git_blob_sha": "a1b5e1dde8a8d81b4898647277cbc20c19a1f636",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.zip",
+      "created_at": "2026-09-01T06:47:09.721164Z",
+      "source_file_id": "libfile_dfab48ab81a88191a64de79d9ddf6c48",
+      "bytes": 5314,
+      "sha256": "6178ca5ff6ffe7dec6d6cd1ac93f32b5483ebd9b3777bfe1faef542a6ba69c54",
+      "git_blob_sha": "b6600296642edfc2dc94aedd8de045c61cfcca88",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v5_core300.zip",
+      "created_at": "2026-09-01T06:34:22.198314Z",
+      "source_file_id": "libfile_4c9ed35ee73c81919ecef1d045d9887f",
+      "bytes": 5540,
+      "sha256": "8d91498dbf3a8f77bcd9fb1df34af7a0fecaea28cdfd3b1c09df05eccd180897",
+      "git_blob_sha": "e208d0913e20ac2687b93a14aefeb59bc6b761fd",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v5_core300.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v4.zip",
+      "created_at": "2026-09-01T05:59:50.217148Z",
+      "source_file_id": "libfile_037d237a431081918e372967c0338faa",
+      "bytes": 4490,
+      "sha256": "4a8ea66f356750a191aa6ac26800545b27a9ae49f9ce1ea3eb84464a3a46473d",
+      "git_blob_sha": "8a0b67b579883ac88a9ff40ed62b9fc1fbd06cd3",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v4.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v3.zip",
+      "created_at": "2026-09-01T05:42:42.340757Z",
+      "source_file_id": "libfile_0d4e50449d408191bbe8b87d7c0320ad",
+      "bytes": 4290,
+      "sha256": "08b90ce64592235edd1f936711fcf33f498550a151317413bfe434e5f5283fdd",
+      "git_blob_sha": "c75ffc9fcc85c9ada2a3427628b627dccae5a1fa",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v3.zip"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer_v2.zip",
+      "created_at": "2026-09-01T05:18:39.099422Z",
+      "source_file_id": "libfile_6d2a742ad96881919e30cd40e2d6540c",
+      "bytes": 3979,
+      "sha256": "ece3c3e0e88838b5f9f85f21afaffdb37275b39938273b0d25b666763bb66be5",
+      "git_blob_sha": "2aab679a81b135148e97267f4ba7c28ad63ef3b3",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v2.zip"
+    },
+    {
+      "original_name": "README_WIRING.txt",
+      "created_at": "2026-08-31T19:54:29.377994Z",
+      "source_file_id": "libfile_00c7ef8bd204819184a9b8a93f3f9b09",
+      "bytes": 2072,
+      "sha256": "6056520fd049c5fc0378d4205c8b4967580a9cd078623c6e55c057fabc872195",
+      "git_blob_sha": "65417ebc6f7630b69e5e04612c29bd47532ea2b7",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/uart-tools/README_WIRING.txt"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer.ino",
+      "created_at": "2026-08-31T19:54:28.590033Z",
+      "source_file_id": "libfile_26593a31cbec8191b0b8211d24aacc2c",
+      "bytes": 8629,
+      "sha256": "e758675a8443b83acdf2d593e361c499c8b253dad939d90a9fd8207076fe1c43",
+      "git_blob_sha": "9527ae67fd6950b9fd8119b4a146133da288409b",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/uart-tools/BluePill_Hoverboard_UART_Sniffer.ino"
+    },
+    {
+      "original_name": "BluePill_Hoverboard_UART_Sniffer.zip",
+      "created_at": "2026-08-31T19:54:27.844755Z",
+      "source_file_id": "libfile_aeb3a6a5468081918014d0098d0b49ee",
+      "bytes": 4307,
+      "sha256": "bd152e5a08d879d64b8825fd6f62f0fb5e7ebe65fa55ab3ba67c235d88df14a9",
+      "git_blob_sha": "4a3e2cff34cabddf3b9370d945ad4c4a65ce72a5",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer.zip"
+    },
+    {
+      "original_name": "Gyroor_G5_V4_1_factory_firmware_deep_analysis.md",
+      "created_at": "2026-08-27T17:07:57.738559Z",
+      "source_file_id": "libfile_5326d879c0608191890ff223f7dd35ed",
+      "bytes": 15662,
+      "sha256": "1e87db0bfb19b99055d9507c7b1d4e24135c7ea517bd0532abe35cb547b68ed5",
+      "git_blob_sha": "11960965f615a8860c8f30aaefd86792f7791342",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/Gyroor_G5_V4_1_factory_firmware_deep_analysis.md"
+    },
+    {
+      "original_name": "Annotated PCB Wiring Guide.png",
+      "created_at": "2026-08-27T03:42:03.220275Z",
+      "source_file_id": "libfile_e44a6b1eff708191a8fb2d9c33b2af4c",
+      "bytes": 2345777,
+      "sha256": "fbdfb55c7f3dcc87845a467058e82c1484a464651ba638367d42478a96bbca36",
+      "git_blob_sha": "91869c15d5ffa56d29a32fb72006ff899926ee24",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/images/Annotated_PCB_Wiring_Guide.png"
+    },
+    {
+      "original_name": "Gyroor_G5_factory_pinmap_analysis.md",
+      "created_at": "2026-08-26T17:53:12.113763Z",
+      "source_file_id": "libfile_27a7a9ad9a908191bf2bd9edb2ce1225",
+      "bytes": 3923,
+      "sha256": "fbd99176a7a502b42ec5e7add205270b48a714fc7a77435a71213fe9aa155f35",
+      "git_blob_sha": "ec689837c0276c42c005dbf9917e2dfee2e1b089",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/Gyroor_G5_factory_pinmap_analysis.md"
+    },
+    {
+      "original_name": "controllerB_slave_disassembly.asm",
+      "created_at": "2026-08-26T17:25:31.118247Z",
+      "source_file_id": "libfile_428aa13b43d88191820eaab3444907d6",
+      "bytes": 910425,
+      "sha256": "af9a07160e1a2a2968abe8b2f24b51e5f482c6cab3be176813d66639398354be",
+      "git_blob_sha": "4f23e6e3bd7b2cac587b634eef331aa775a47526",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/disassembly/controllerB_slave_disassembly.asm"
+    },
+    {
+      "original_name": "AB_firmware_analysis(1).md",
+      "created_at": "2026-08-26T17:25:30.456472Z",
+      "source_file_id": "libfile_c27903a9358481918c7d0be32cc16e54",
+      "bytes": 5721,
+      "sha256": "1c6e4fc00400e9c439775f79aec6fc1d72c8480b1f5e4dd766683888c2a554de",
+      "git_blob_sha": "e2fd1042aa9ef1b9bbae9b5d173ccb5a0f6c0842",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/reports/AB_firmware_analysis(1).md"
+    },
+    {
+      "original_name": "AB_firmware_analysis.md",
+      "created_at": "2026-08-26T17:25:27.638842Z",
+      "source_file_id": "libfile_83ed8719964881918cb44fdb9ecb7c22",
+      "bytes": 5721,
+      "sha256": "1c6e4fc00400e9c439775f79aec6fc1d72c8480b1f5e4dd766683888c2a554de",
+      "git_blob_sha": "e2fd1042aa9ef1b9bbae9b5d173ccb5a0f6c0842",
+      "status": "duplicate",
+      "repository_path": "docs/chat-archive/analysis/reports/AB_firmware_analysis(1).md"
+    },
+    {
+      "original_name": "factory_vector_tables.txt",
+      "created_at": "2026-08-26T17:07:54.521720Z",
+      "source_file_id": "libfile_e3cf700ccd488191811d160c07bf9e61",
+      "bytes": 1733,
+      "sha256": "d7bc4d50cc85842ca24836a5d39385bb381dda551f62ce7d46d0d315c999342f",
+      "git_blob_sha": "89d467727ad29eea5abb010eeae6b7df00038c59",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/disassembly/factory_vector_tables.txt"
+    },
+    {
+      "original_name": "controller2_factory_disassembly.asm",
+      "created_at": "2026-08-26T17:07:53.932469Z",
+      "source_file_id": "libfile_086586719f008191bbb6bfa334d15d99",
+      "bytes": 631362,
+      "sha256": "84f8fc5130d3e7957cef24dfc710547527dba4d397a9a789035b072e5caceb38",
+      "git_blob_sha": "ff88f06846e334b11d7eee19b891795194527940",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/disassembly/controller2_factory_disassembly.asm"
+    },
+    {
+      "original_name": "controller1_factory_disassembly.asm",
+      "created_at": "2026-08-26T17:07:53.280469Z",
+      "source_file_id": "libfile_c525934d8200819186dcbfc75b4a21b5",
+      "bytes": 630820,
+      "sha256": "5bda61b43d6792965719c689f08bc3271bfd3e936a5cbf2565c3b4f8c0f18fdb",
+      "git_blob_sha": "1c32451c59af9b3fb805937af856c097b2386afd",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/analysis/disassembly/controller1_factory_disassembly.asm"
+    },
+    {
+      "original_name": "oriFW(1)(1).bin",
+      "created_at": "2026-08-26T17:03:03.602534Z",
+      "source_file_id": "libfile_df4601bd81a881919a537cdf51fbf999",
+      "bytes": 65536,
+      "sha256": "c0d45253cc601ba1bc2291f3493203122bd9f66237e942f42b293d08a7a50c13",
+      "git_blob_sha": "35f32287f4248ee06d2b86729fec3b0890e7720a",
+      "status": "archived",
+      "repository_path": "docs/chat-archive/firmware-snapshots/oriFW(1)(1).bin"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+HOVERBOARD OPEN SERVO PROJECT — AVAILABLE CONVERSATION RECORD
+Recorded: 2026-09-21
+Status: INCOMPLETE. This is not a full transcript.
+
+COVERAGE
+The complete earlier conversation was not available as a message-by-message
+export. Searches did not recover a full transcript file. Earlier summaries
+are not reproduced as verbatim messages. Only the exact project user requests
+available below are quoted. Assistant responses and earlier discussion are
+not exhaustively represented. No missing message timestamps are invented.
+
+EXACT AVAILABLE USER REQUESTS, IN ORDER
+
+USER:
+did we look at simpleFOC?
+
+USER:
+please review this full conversation and find any useful reference repos that we left out of our docs
+
+USER:
+please correct the documentation errors then:
+
+you mentioned older conversation is available, can you go back and analyze the entire conversation, find all repo references, analyze what A) we are currently using B)what could be used C) make a document to fully contain all references for this project so that you and i can look at it at any time to find something that we missed and add to.
+
+USER:
+please add another folder under docs to contain all the files we have made in the chat that arent included elsewhere, make subfolders as you see fit. also a full text record of this entire conversation should be included for you ref
+
+USER:
+please continue
+
+WORK RECORD — EDITORIAL SUMMARY, NOT A TRANSCRIPT
+
+The reference audit was committed on servo/r0-baseline in
+811e4142ad706f47e76bedcbe144b026feb0da9a. See
+docs/provenance/SOURCES.md for repository references, evidence, usage status,
+candidate uses, and unresolved questions.
+
+The archive recovery identified 40 generated project artifacts and retained
+37 distinct original files. Three duplicate entries point to their identical
+retained originals. The artifact manifest records the recovery scope and
+checksums. The historical ZIP packages were checked for archive integrity;
+that does not establish firmware correctness or hardware compatibility.
+
+OPEN GAP
+A full conversation export is required to fulfill the entire-conversation
+record request. Once supplied, preserve it as a separate source text file and
+record its actual coverage. Do not rename this partial record as a complete
+transcript or manufacture earlier assistant/user messages.
+
+RESUMPTION RECORD — EDITORIAL SUMMARY, NOT A TRANSCRIPT
+
+The following user message resumed the interrupted archive task:
+
+USER:
+you got cut off again by the chat length limit you were carrying out:
+"please add another folder under docs to contain all the files we have made in the chat that arent included elsewhere, make subfolders as you see fit. also a full text record of this entire conversation should be included for you ref"
+please find where you left off and continue
+
+Recovery found the pending docs/chat-archive directory and its build script in
+the previous workspace. The remote branch still pointed to 811e414, so those
+archive files had not been committed. Original-file checksums and package
+integrity were checked again before committing the recovered work.
+
+The resuming thread also received partial conversation context numbered
+398–433, preceded by a fragment of an earlier assistant response. That context
+explicitly skips earlier material; it is not a complete conversation export.
+This file remains a selected record, not a verbatim copy of that context.

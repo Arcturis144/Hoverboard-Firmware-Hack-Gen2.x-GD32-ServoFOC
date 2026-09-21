@@ -1,0 +1,39 @@
+Controller 1 — oriFW(1).bin
+SHA-256: c0d45253cc601ba1bc2291f3493203122bd9f66237e942f42b293d08a7a50c13
+Vector table:
+   0 Initial_SP   0x20000A90
+   1 Reset        0x08000171  target=0x08000170
+   2 NMI          0x080035E1  target=0x080035E0
+   3 HardFault    0x08002A15  target=0x08002A14
+   4 MemManage    0x080035CD  target=0x080035CC
+   5 BusFault     0x080016C9  target=0x080016C8
+   6 UsageFault   0x08005E9F  target=0x08005E9E
+   7 Reserved7    0x00000000  target=0x00000000
+   8 Reserved8    0x00000000  target=0x00000000
+   9 Reserved9    0x00000000  target=0x00000000
+  10 Reserved10   0x00000000  target=0x00000000
+  11 SVCall       0x080049C1  target=0x080049C0
+  12 DebugMon     0x0800228D  target=0x0800228C
+  13 Reserved13   0x00000000  target=0x00000000
+  14 PendSV       0x08004301  target=0x08004300
+  15 SysTick      0x080053E9  target=0x080053E8
+
+Controller 2 — oriFW2.bin
+SHA-256: 7f311f8b87aa3f1d476b83cbf45c1b36440d59af48caea159f1e4ed6abb34718
+Vector table:
+   0 Initial_SP   0x20000A90
+   1 Reset        0x08000171  target=0x08000170
+   2 NMI          0x080035E1  target=0x080035E0
+   3 HardFault    0x08002A15  target=0x08002A14
+   4 MemManage    0x080035CD  target=0x080035CC
+   5 BusFault     0x080016C9  target=0x080016C8
+   6 UsageFault   0x08005E9F  target=0x08005E9E
+   7 Reserved7    0x00000000  target=0x00000000
+   8 Reserved8    0x00000000  target=0x00000000
+   9 Reserved9    0x00000000  target=0x00000000
+  10 Reserved10   0x00000000  target=0x00000000
+  11 SVCall       0x080049C1  target=0x080049C0
+  12 DebugMon     0x0800228D  target=0x0800228C
+  13 Reserved13   0x00000000  target=0x00000000
+  14 PendSV       0x08004301  target=0x08004300
+  15 SysTick      0x080053E9  target=0x080053E8
