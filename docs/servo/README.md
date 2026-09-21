@@ -17,3 +17,7 @@ Commissioning will also mine the existing `RemoteAutodetect` logic plus lucai11 
 Command transports use the same controller-owned validation path. The Jodaille/EFeru iBUS [FlySky serial receiver protocol] parser is a reference for FS-iA6B input, while WestlingPi and Homobonus provide examples of command plausibility rejection and last-valid-link-age telemetry. HUGS [Hoverboard Utility Gateway System], YujiKF, and hoverboardhavoc host tooling are secondary references for servo APIs [application programming interfaces], bench control, telemetry, and wireless bridges.
 
 See `docs/provenance/SOURCES.md` for exact pins and licensing notes, and `docs/provenance/FORK_SURVEY.md` for the full fork-network survey.
+
+## Historical chat artifacts
+
+See the [chat artifact archive](../chat-archive/README.md) for recovered original packages, reports, build snapshots, and the explicitly incomplete conversation record.

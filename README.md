@@ -40,3 +40,7 @@ See:
 - `external/README.md`
 
 The upstream `ai_guidelines*.md` files remain authoritative for how new firmware code should fit the Gen2.x C architecture.
+
+## Historical chat artifacts
+
+See the [chat artifact archive](docs/chat-archive/README.md) for recovered original packages, reports, build snapshots, and the explicitly incomplete conversation record.

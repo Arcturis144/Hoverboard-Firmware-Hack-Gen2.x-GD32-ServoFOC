@@ -1,0 +1,1374 @@
+[
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/README_PHASE4_CUBEIDE.md",
+    "bytes": 7844,
+    "sha256": "2e7d34feb916e96349a1a867d4a50c8e3dff9983ba29f1ce31388bdd4f39e724",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/PHASE4_FILE_MAP.txt",
+    "bytes": 1924,
+    "sha256": "ed8d4cf228e04e93b8def738868fb3562c7edff8f7792cbd27b3c294065321df",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/SHA256SUMS.txt",
+    "bytes": 2110,
+    "sha256": "3faa7395adb3f896f6314720283c4e8552b5006589f5dc5b610f88318a5de69b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/apply_phase4_cubeide.py",
+    "bytes": 6800,
+    "sha256": "e2c4f46060f3bf7aec762c1ae679ccc6df5f6142fa40841eab841e53a85bfa2c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Gyroor G5 - Attach Live.launch",
+    "bytes": 3664,
+    "sha256": "41638b15c25fe50559eeb537ab86075881759fd0585f02e375381e025fb13d7c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/.cproject",
+    "bytes": 6933,
+    "sha256": "bbda3b5c874b26652f7a19f0f74cd06ae88882fc6a6a3b2414502018c899a4b2",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Gyroor G5 - Program 400kHz.launch",
+    "bytes": 988,
+    "sha256": "46a444cb4ae7a8ce98d647aa3a5d00d5f760d4802f9d50bcaf2c2680f743badd",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/.project",
+    "bytes": 1860,
+    "sha256": "baea87d05fe2a03aa1752fdf0b57737e852ffe898378e38658bd02748cd6500f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 912,
+    "sha256": "2749001a5a6f461be1e3ce7f37de7ba27476d133505ec2b59d6ab3892bd5a91f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2481,
+    "sha256": "50cdd6313c9789b4b92a21cb3aa0cf8d8aaaa56bfba73f3d6bf12ac9383e07f5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2600,
+    "sha256": "f5c3beba91d752fe41ec61f0fd6c125d242cc5417df9c4ad6c4b4c77dc547bbb",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 5451,
+    "sha256": "a2b64d0ef847bc0d3d2a93fc06211e55567c843ee57bbf83e8184f62300d0971",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Gyroor G5 - OpenOCD Server.launch",
+    "bytes": 842,
+    "sha256": "867a4281539e5b3a954b0d1d428edda21d7b7b145dd270a291db6c7288eb5abf",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 12604,
+    "sha256": "c2fecba3acb01204c23a428401eece727b24dd69613065ea4fb40c0d7c1620ba",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 14183,
+    "sha256": "c3017297f2cd4b88df9065952b72d98b0c114b90e1cf8671521bff5e767bbc7b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 150,
+    "sha256": "754ca902f22a260c247c9c2609c687153e382e63dc5643a98a82a832fce7b00a",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/CubeIDE/openocd/gyroor_gd32f130_stlink.cfg",
+    "bytes": 666,
+    "sha256": "9c6255e8269fbb758133f7fd9e1f971cf055fb270299270f459cb039fbe9d3f0",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/overlay/HoverBoardGigaDevice/CubeIDE/cubeide.mk",
+    "bytes": 2054,
+    "sha256": "1d2920db44800da842fe193e6cc910c545af24a5ae16af15d06ff54bf9c64b47",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/_apply_phase3_base.py",
+    "bytes": 17231,
+    "sha256": "87cd9fe67ff4f43de37b02fac901df163b406c687bd7d102b085e81f5ba3972e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_CubeIDE_Phase4.zip",
+    "member": "Gyroor_G5_Gen2_FOC_CubeIDE_Phase4/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "b33e5e5ff7460ea49b64b01c6448b66e4ddc298f68c33aaa2a1dc38b42ed540d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/vendor_eferu_foc.py",
+    "bytes": 3256,
+    "sha256": "34cf26d98f5ae1adc882655c83c0478db726435d997db140985b806caa81ef05",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/apply_phase3.py",
+    "bytes": 15379,
+    "sha256": "3a415f2bf2b2ff8835b8a71fa6caff537965830f03e3fe01bb5295d3fa6b90c3",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/G5MON_WATCHES.txt",
+    "bytes": 874,
+    "sha256": "b4c66df97258a8d41a75e49d0dd1b96a9ca1c595a60899945cc08b3d160166b4",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/project/Gyroor_G5_GD32F130C8.sct",
+    "bytes": 275,
+    "sha256": "43a2cb44f8e69b6f418b703d6cf745101120e2588757359f45607d251713a557",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/project/Gyroor_G5_Phase3.csolution.yml",
+    "bytes": 650,
+    "sha256": "c2b2d47f8b2dd6ce85842b9dd9053aff4323050aefe9a59d2a9dc65cfaf532c1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/project/Gyroor_G5_Phase3.cproject.yml",
+    "bytes": 2782,
+    "sha256": "7d31d4c1e6c131aa50b25ba861a1f56ee7854505009901a88a9da12bfc0950c4",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/vcpkg-configuration.json",
+    "bytes": 363,
+    "sha256": "d608eadb47758a7f6016343448a9c85887e6f0b29cba532fc47af5908910965c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/.vscode/extensions.json",
+    "bytes": 58,
+    "sha256": "5a02d8a37e2840c4681a12117f15f631840d040c15fa5def16814a0c1347be60",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/README_KEIL_STUDIO.md",
+    "bytes": 1366,
+    "sha256": "2f72d2eaaf5b0266ae9c4bb7ddba74da21c31bbd5a41300813fbf90c1417428d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 5065,
+    "sha256": "8f23f6ab73d1b6be94f3e1b640c2d65198b3e40101d1ae95d20adb0a36adc6ba",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 8571,
+    "sha256": "142f9f215c9377441c4ac0ba82bc8b5bcd0c00bbdb22ed4b96a7dd72daeaf251",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 15168,
+    "sha256": "fb001481bf8873dfa65bd7a189d2a803cfa957e1833f7152283d48804bc49aa1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 1001,
+    "sha256": "4985ce3ff7d2b91b4be4c05d6efe799a765a8fb11c88434dd9ba11c16e22c3e6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2617,
+    "sha256": "879b3427060b137a098187df6848e917fd312859c552e1a440e6fb432cfaf3f5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2522,
+    "sha256": "ff108004ff0e8f8b97f5490e1b6fc304fe847574b4ba998061e6dda0e4e5ef64",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 4854,
+    "sha256": "bd82f84115a86e498cf704bfaf4a6bbe14f5dd0978b2e384506abd1f71bed494",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/SHA256SUMS.txt",
+    "bytes": 2389,
+    "sha256": "dd0e482bcd842d0c021b58fb79dcf3e6e6c9e346d2bf36878335a70d2664558f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/APPLY_PHASE3_KEILSTUDIO.bat",
+    "bytes": 737,
+    "sha256": "3a59f1b28942ecb9aa1e283e689cbda7f8b3e250fa3e73b02f84fcb8c326f3cc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/START_HERE.txt",
+    "bytes": 1027,
+    "sha256": "0058942d76030b70cd0e43580c8554ce1bb5df349c74de86a83b5d49e9ee2004",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/AI_GUIDELINES_AUDIT.md",
+    "bytes": 2836,
+    "sha256": "7a37ec743b65b5e04c1445ac7ae85b3e906de9e455ad3d0ff3c046652e2521c6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/VALIDATION.txt",
+    "bytes": 677,
+    "sha256": "e6572a3572f4fd4b9029d4521cb9f35e410bee783a54b1db96c653dbb5b17a16",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/KEILSTUDIO_FILE_MAP.txt",
+    "bytes": 983,
+    "sha256": "dae27677a7b993abc5d1bf3c7d384daacac7846d81b503d032f35e9d51dd0549",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/PHASE3_FILE_MAP.txt",
+    "bytes": 957,
+    "sha256": "219ffaa48c1c2fdd05256f9f0e86fddcd011ed31d4c4f889692265bdc6f993a3",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/README_PHASE3.md",
+    "bytes": 1267,
+    "sha256": "9075822bf8e2e445e5a86f2603f3573608f49d0454a170ea81b9e7b9ebd50a2f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_DirectCMSIS.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/apply_phase3_keilstudio.py",
+    "bytes": 8637,
+    "sha256": "af594622c0c330c7658be628a9a553ba9a3a18d5e0ba28e33d272eeb92ec36ab",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/vendor_eferu_foc.py",
+    "bytes": 3256,
+    "sha256": "34cf26d98f5ae1adc882655c83c0478db726435d997db140985b806caa81ef05",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/apply_phase3.py",
+    "bytes": 15379,
+    "sha256": "3a415f2bf2b2ff8835b8a71fa6caff537965830f03e3fe01bb5295d3fa6b90c3",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/G5MON_WATCHES.txt",
+    "bytes": 874,
+    "sha256": "b4c66df97258a8d41a75e49d0dd1b96a9ca1c595a60899945cc08b3d160166b4",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/vcpkg-configuration.json",
+    "bytes": 363,
+    "sha256": "d608eadb47758a7f6016343448a9c85887e6f0b29cba532fc47af5908910965c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/.vscode/extensions.json",
+    "bytes": 58,
+    "sha256": "5a02d8a37e2840c4681a12117f15f631840d040c15fa5def16814a0c1347be60",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/keilstudio/README_KEIL_STUDIO.md",
+    "bytes": 1303,
+    "sha256": "3aba684f72048bd596a00a7d7e18dbc801d339f3357029bcd135ccc5eba24b56",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 5065,
+    "sha256": "8f23f6ab73d1b6be94f3e1b640c2d65198b3e40101d1ae95d20adb0a36adc6ba",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 8571,
+    "sha256": "142f9f215c9377441c4ac0ba82bc8b5bcd0c00bbdb22ed4b96a7dd72daeaf251",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 15168,
+    "sha256": "fb001481bf8873dfa65bd7a189d2a803cfa957e1833f7152283d48804bc49aa1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 1001,
+    "sha256": "4985ce3ff7d2b91b4be4c05d6efe799a765a8fb11c88434dd9ba11c16e22c3e6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2617,
+    "sha256": "879b3427060b137a098187df6848e917fd312859c552e1a440e6fb432cfaf3f5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2522,
+    "sha256": "ff108004ff0e8f8b97f5490e1b6fc304fe847574b4ba998061e6dda0e4e5ef64",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 4854,
+    "sha256": "bd82f84115a86e498cf704bfaf4a6bbe14f5dd0978b2e384506abd1f71bed494",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/SHA256SUMS.txt",
+    "bytes": 2090,
+    "sha256": "e5b1901c81fe6eb30f1b364b13f17b8f1df16f058d10dab7aa6a0b6f42c0da45",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/APPLY_PHASE3_KEILSTUDIO.bat",
+    "bytes": 737,
+    "sha256": "3a59f1b28942ecb9aa1e283e689cbda7f8b3e250fa3e73b02f84fcb8c326f3cc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/START_HERE.txt",
+    "bytes": 907,
+    "sha256": "a63d09320ac0d08b5ae4c4052cdee75c9fb06ca156fe560c68a24f9a5cb69e12",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/AI_GUIDELINES_AUDIT.md",
+    "bytes": 2836,
+    "sha256": "7a37ec743b65b5e04c1445ac7ae85b3e906de9e455ad3d0ff3c046652e2521c6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/VALIDATION.txt",
+    "bytes": 677,
+    "sha256": "e6572a3572f4fd4b9029d4521cb9f35e410bee783a54b1db96c653dbb5b17a16",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/KEILSTUDIO_FILE_MAP.txt",
+    "bytes": 983,
+    "sha256": "dae27677a7b993abc5d1bf3c7d384daacac7846d81b503d032f35e9d51dd0549",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/PHASE3_FILE_MAP.txt",
+    "bytes": 957,
+    "sha256": "219ffaa48c1c2fdd05256f9f0e86fddcd011ed31d4c4f889692265bdc6f993a3",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/README_PHASE3.md",
+    "bytes": 1267,
+    "sha256": "9075822bf8e2e445e5a86f2603f3573608f49d0454a170ea81b9e7b9ebd50a2f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_GuidelineAudit/apply_phase3_keilstudio.py",
+    "bytes": 7001,
+    "sha256": "c50c32a2815d5227460d6e8728c430871548daa77daccc467fa2ca8cfded4c33",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/README_PHASE3.md",
+    "bytes": 3712,
+    "sha256": "1daa5af1cc6ac558d44196587fb312280bdfc90a1f91614dff97961e18b95d07",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/vendor_eferu_foc.py",
+    "bytes": 4097,
+    "sha256": "35acae50afbc95b002522fb14a2b4896fd62da93ef82dbca80f5845476fdc044",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/AI_GUIDELINES_AUDIT.md",
+    "bytes": 5938,
+    "sha256": "e3cb23f1b14c77c296d23e8932718889a1c9b5fe8b408a883b950fc70688c176",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/KEILSTUDIO_FILE_MAP.txt",
+    "bytes": 1036,
+    "sha256": "725ef044052f83b7bd187f81bd7b73957e554a6fee1abd904370b54d13470cc5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/apply_phase3.py",
+    "bytes": 21243,
+    "sha256": "78d81048b0eb06baa58b868186a5a4caa74ede6839511d836ebb1f28ed89e4c4",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 8232,
+    "sha256": "568a0ca1ee5370525236a5cd62d4f044dea089d9627ff4328614dc62fce8ae17",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 15299,
+    "sha256": "f5d5644c51e6c681f2952ac28544d35072beab7553815e9e5020c312fa2f1756",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 5351,
+    "sha256": "49136b438ebfa420f15b094240ac7376a16bbb573f80fc730f1ba83ad6a4a3b3",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2710,
+    "sha256": "7a01dac5a1071747538f4d78e23c16a95e3f6142b8eab40f4a7d84a4dde54d91",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 1086,
+    "sha256": "2fed318507ea41cd6268d95cb86ebbe036ba44866b3bb2dd8d4fd026a573dae1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 5818,
+    "sha256": "1da3b91773fb2c662766427b9a35b1bbf4d8676cb2f9fee04e51e58ab0118b2e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2785,
+    "sha256": "14a335850f9f7f75411cb7d4f78cf4927c88b8495b992e00e6e622073be987a6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/SHA256SUMS.txt",
+    "bytes": 2090,
+    "sha256": "389c1ad67849b97b36fa34c8639c3b1cb0c1042515e01bef393cf44f45b1ea21",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/PHASE3_FILE_MAP.txt",
+    "bytes": 1214,
+    "sha256": "0a8aee070699e5b88880e064d15db8f81e73c50f722219ed76e1ab26ef70c64b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/APPLY_PHASE3_KEILSTUDIO.bat",
+    "bytes": 737,
+    "sha256": "3a59f1b28942ecb9aa1e283e689cbda7f8b3e250fa3e73b02f84fcb8c326f3cc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/START_HERE.txt",
+    "bytes": 1927,
+    "sha256": "83d93b627d4b435f1915365733c9eb5936f8d8ecd63bea74e15555d965c867cb",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/VALIDATION.txt",
+    "bytes": 2167,
+    "sha256": "7d28e889ef62cb97eff53e9d919b0231eb3bdcb856ccc40f7c418d2c9d0457dc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/keilstudio/vcpkg-configuration.json",
+    "bytes": 363,
+    "sha256": "d608eadb47758a7f6016343448a9c85887e6f0b29cba532fc47af5908910965c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/keilstudio/G5MON_WATCHES.txt",
+    "bytes": 1633,
+    "sha256": "46c1862f1e9ba0e8c52b72ee2ec1b1bc3ba027248f8e42789a896811a4d5b095",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/keilstudio/README_KEIL_STUDIO.md",
+    "bytes": 4505,
+    "sha256": "f130dfeb19855a3c541011b74895537e8d66fb60fb46d8f1941a7ff8ac8a9cdb",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/keilstudio/.vscode/extensions.json",
+    "bytes": 58,
+    "sha256": "5a02d8a37e2840c4681a12117f15f631840d040c15fa5def16814a0c1347be60",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio_AI_Audited/apply_phase3_keilstudio.py",
+    "bytes": 10968,
+    "sha256": "72b198db7daa54913b84f5b40d4767fd757a54be31ced8183d33fa1643b611e2",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/SHA256SUMS.txt",
+    "bytes": 1999,
+    "sha256": "acf21d3bdcb41cc4f4277ee13f291230f7c7c3154ad6099ebc0e9497d38ba1ad",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "b33e5e5ff7460ea49b64b01c6448b66e4ddc298f68c33aaa2a1dc38b42ed540d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/APPLY_PHASE3_KEILSTUDIO.bat",
+    "bytes": 737,
+    "sha256": "3a59f1b28942ecb9aa1e283e689cbda7f8b3e250fa3e73b02f84fcb8c326f3cc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/VALIDATION.txt",
+    "bytes": 1962,
+    "sha256": "c53b1cc21983e1b5be11351389a5637b99d4155b2bd1136069a64e1c5a075170",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/apply_phase3_keilstudio.py",
+    "bytes": 6011,
+    "sha256": "df0427530e67f96c1e80f2ef520ddd616abf89e24ed0f48f8f472504c7c3b3c6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/README_PHASE3.md",
+    "bytes": 6223,
+    "sha256": "4381b8b75ac17dc62c18c190095559817af69e9d5920a084c5e3bae04d53cc3a",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/PHASE3_FILE_MAP.txt",
+    "bytes": 913,
+    "sha256": "a7ee7e78565a1ccfa37a2a1250144f254844093a99e0cc0e60a01277c4fbc56e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/keilstudio/G5MON_WATCHES.txt",
+    "bytes": 1633,
+    "sha256": "46c1862f1e9ba0e8c52b72ee2ec1b1bc3ba027248f8e42789a896811a4d5b095",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/keilstudio/README_KEIL_STUDIO.md",
+    "bytes": 5530,
+    "sha256": "ca58b8940e6b61d9a3472c4814156b058b173b2c7d2f12ec3a67b7e4e9c0280e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/keilstudio/.vscode/extensions.json",
+    "bytes": 58,
+    "sha256": "5a02d8a37e2840c4681a12117f15f631840d040c15fa5def16814a0c1347be60",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/keilstudio/vcpkg-configuration.json",
+    "bytes": 363,
+    "sha256": "d608eadb47758a7f6016343448a9c85887e6f0b29cba532fc47af5908910965c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/START_HERE.txt",
+    "bytes": 1357,
+    "sha256": "5691fbf849cdfeb779781397f8cc822d6af6ebf6758fd696b049cf03fb8323f8",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/apply_phase3.py",
+    "bytes": 17587,
+    "sha256": "9a50ddef8b4c3e7a1be537187dff550b4556ddcecf63dff5c8584d858aa0242b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 13858,
+    "sha256": "f0c38fa651bd81bda677716eff4f03f94f4f57166f96f4e262fc6a0befc8b82b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 5160,
+    "sha256": "06b7e556c33f066d85ca8cd0e64b9293650f10fe74128401d6db04b514bc78c8",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 8417,
+    "sha256": "6d4fb896aa40398fba983c5632d357ea48919fd2fc9ccb24bba167195c45c095",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2618,
+    "sha256": "5d24b7f41c59f37d7d3c037443d30cea084d64b9ae781259e19e39300289b2a1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2492,
+    "sha256": "c5fb0c5d70ea499fc215a9a1990559f49c2ea815d4a9ddcc11021449f736a394",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 912,
+    "sha256": "2749001a5a6f461be1e3ce7f37de7ba27476d133505ec2b59d6ab3892bd5a91f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 5451,
+    "sha256": "a2b64d0ef847bc0d3d2a93fc06211e55567c843ee57bbf83e8184f62300d0971",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_KeilStudio.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_KeilStudio/KEILSTUDIO_FILE_MAP.txt",
+    "bytes": 983,
+    "sha256": "dae27677a7b993abc5d1bf3c7d384daacac7846d81b503d032f35e9d51dd0549",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "b33e5e5ff7460ea49b64b01c6448b66e4ddc298f68c33aaa2a1dc38b42ed540d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/apply_phase3.py",
+    "bytes": 17231,
+    "sha256": "87cd9fe67ff4f43de37b02fac901df163b406c687bd7d102b085e81f5ba3972e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/PHASE3_FILE_MAP.txt",
+    "bytes": 913,
+    "sha256": "a7ee7e78565a1ccfa37a2a1250144f254844093a99e0cc0e60a01277c4fbc56e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/SHA256SUMS.txt",
+    "bytes": 1028,
+    "sha256": "05177791d13dd1b5e8f18699fe402227daa4daead9951f7d1e9bb8f3c53f9acd",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 5451,
+    "sha256": "a2b64d0ef847bc0d3d2a93fc06211e55567c843ee57bbf83e8184f62300d0971",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2492,
+    "sha256": "c5fb0c5d70ea499fc215a9a1990559f49c2ea815d4a9ddcc11021449f736a394",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 912,
+    "sha256": "2749001a5a6f461be1e3ce7f37de7ba27476d133505ec2b59d6ab3892bd5a91f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 13858,
+    "sha256": "f0c38fa651bd81bda677716eff4f03f94f4f57166f96f4e262fc6a0befc8b82b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 7918,
+    "sha256": "78ca857d1125620d340dccbcbbe8b970eb8ee3a7edbfb22c9e6c2d600adbcd09",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3/README_PHASE3.md",
+    "bytes": 6223,
+    "sha256": "4381b8b75ac17dc62c18c190095559817af69e9d5920a084c5e3bae04d53cc3a",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/apply_phase3_cubeide.py",
+    "bytes": 4571,
+    "sha256": "71a8586f2063790bed0e753394fb70e9da0df3b7edc09f91bfb8e1246eb18701",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/VALIDATION.txt",
+    "bytes": 1353,
+    "sha256": "913f740b2bff88097e0919e8184422755a0ec94e93ada7bd322752fa7fc5fc46",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/PHASE3_FILE_MAP.txt",
+    "bytes": 913,
+    "sha256": "a7ee7e78565a1ccfa37a2a1250144f254844093a99e0cc0e60a01277c4fbc56e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "b33e5e5ff7460ea49b64b01c6448b66e4ddc298f68c33aaa2a1dc38b42ed540d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/CUBEIDE_FILE_MAP.txt",
+    "bytes": 1147,
+    "sha256": "1a1a5df27ac3b57f00aaca22484542ce8a9daf45e83a71fc86b380d90c55d501",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 8417,
+    "sha256": "6d4fb896aa40398fba983c5632d357ea48919fd2fc9ccb24bba167195c45c095",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 13858,
+    "sha256": "f0c38fa651bd81bda677716eff4f03f94f4f57166f96f4e262fc6a0befc8b82b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Src/g5Monitor.c",
+    "bytes": 5160,
+    "sha256": "06b7e556c33f066d85ca8cd0e64b9293650f10fe74128401d6db04b514bc78c8",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Inc/g5Monitor.h",
+    "bytes": 2618,
+    "sha256": "5d24b7f41c59f37d7d3c037443d30cea084d64b9ae781259e19e39300289b2a1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 5451,
+    "sha256": "a2b64d0ef847bc0d3d2a93fc06211e55567c843ee57bbf83e8184f62300d0971",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2492,
+    "sha256": "c5fb0c5d70ea499fc215a9a1990559f49c2ea815d4a9ddcc11021449f736a394",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 912,
+    "sha256": "2749001a5a6f461be1e3ce7f37de7ba27476d133505ec2b59d6ab3892bd5a91f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/README_CUBEIDE.md",
+    "bytes": 11874,
+    "sha256": "a340b45894241b3c06afbcff4767f935bd40194377146e48b7b6647c8415b727",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/vendor_gd32_headers.py",
+    "bytes": 2771,
+    "sha256": "b0bc64e917d62268a6df5da0a4434425d2bf1cdacdf2eefe1746f5da581f3896",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/OpenOCD/attach.gdb",
+    "bytes": 158,
+    "sha256": "c6f7a2930509de3d8880602d17075244fa7777fcd890521c26f77e595da5788b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/OpenOCD/gyroor_gd32f130_stlink.cfg",
+    "bytes": 737,
+    "sha256": "438e527bcf86b5bee4442b44bd947534e73a1a0ce5e19655dafcdfd3d174ae8f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/OpenOCD/program.gdb",
+    "bytes": 154,
+    "sha256": "ece9d276bdf946a017ce85fc34d59b58dcfbce94987ea9a27d57325f2440e161",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/tools/start_openocd_cubeide.ps1",
+    "bytes": 1852,
+    "sha256": "ef59eb0337ffae472051a036c1ac5c1f02d0920f8a242a6fe300b0f67f6c425c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/tools/build_with_cubeide_toolchain.ps1",
+    "bytes": 1602,
+    "sha256": "79b50e7e4e9c90b453f37619e38f5d585147c5b892e23886bdc76be748e5ff59",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/tools/program_with_cubeide_tools.ps1",
+    "bytes": 2499,
+    "sha256": "b892d65d81145699a1815409353d6901b7ae7f56be386b070abfd479d34e185d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/CubeIDE/tools/build_with_cubeide_toolchain.sh",
+    "bytes": 319,
+    "sha256": "c8ec8709f568da1d43eb222b9144b472a3cb5cd6928a9c8a66a8104c726b2110",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/.project",
+    "bytes": 915,
+    "sha256": "11425c10c57a3c8b4d3fd7cc38321e96001d7ff15591205712acdadc50817a86",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/Makefile",
+    "bytes": 3920,
+    "sha256": "c8572073dcda449d9f5f79d774d424b558564247b2f2e67d6bf0c60d4481815e",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/HoverBoardGigaDevice/GCC/GD32F130C8_FLASH.ld",
+    "bytes": 2507,
+    "sha256": "b215f6bb25defc85bed300cebdf6e94a090e5ce0109369372e763e908dd5566f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/cubeide/HoverBoardGigaDevice/GCC/startup_gd32f1x0_gcc.s",
+    "bytes": 4605,
+    "sha256": "7179f6a36881e0a5a494a7ca1048856de8a20b7db5711043b4e7968ef343a94f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/README_PHASE3.md",
+    "bytes": 6223,
+    "sha256": "4381b8b75ac17dc62c18c190095559817af69e9d5920a084c5e3bae04d53cc3a",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/SHA256SUMS.txt",
+    "bytes": 2755,
+    "sha256": "373597ddbd918d71db582c43f9d7c8c55f63d1990a13035a9056131230402906",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase3_CubeIDE(1).zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase3_CubeIDE/apply_phase3.py",
+    "bytes": 17587,
+    "sha256": "9a50ddef8b4c3e7a1be537187dff550b4556ddcecf63dff5c8584d858aa0242b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip",
+    "member": "Gyroor_G5_CubeMonitor_Phase3/ZIP_SHA256.txt",
+    "bytes": 99,
+    "sha256": "f347d2c454e7076402914283b12ca79208a255021d694ebc885f596a501df801",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip",
+    "member": "Gyroor_G5_CubeMonitor_Phase3/README.md",
+    "bytes": 6548,
+    "sha256": "b957448f2d4a6e0c7beb713d37f1803c12d214336724a753b116ffd4746e43d1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip",
+    "member": "Gyroor_G5_CubeMonitor_Phase3/generate_cubemonitor_project.py",
+    "bytes": 19048,
+    "sha256": "d9619040be54b62e9108301bbb56267bb86645d289c63d5d4b79e0ae31da52c0",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip",
+    "member": "Gyroor_G5_CubeMonitor_Phase3/MONITOR_VARIABLES.md",
+    "bytes": 1806,
+    "sha256": "6399d65d6d53a21db2e4ef66946e6f07cbd51e064b0bc7d5c77f6aaedeffce1b",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_CubeMonitor_Phase3.zip",
+    "member": "Gyroor_G5_CubeMonitor_Phase3/FAULT_BITS.txt",
+    "bytes": 300,
+    "sha256": "e4b46590bd06afe70404a6f178f36a1ef8f4cb875e943314072cb7f5a98faaa1",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/SHA256SUMS.txt",
+    "bytes": 919,
+    "sha256": "7f2c1f65922ef2124774292d2ad6d0becfd18816659eac5a87caa53ddc5f5b64",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 7722,
+    "sha256": "5bdbd07145f6e66b0faedc8494b378822b93d98a185bde4fab589e008713bbe7",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/overlay/HoverBoardGigaDevice/Src/driveCapability.c",
+    "bytes": 10268,
+    "sha256": "5cad4130422eb0eb9c855e63c4dd6ec463d851b1e6b70ec7f254a5b12453733f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/overlay/HoverBoardGigaDevice/Inc/driveCapability.h",
+    "bytes": 2064,
+    "sha256": "a26572e69f579041a58cebf9ccf8a42894a02d91c80a8f0882bedb57eeedc33d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 864,
+    "sha256": "94be6beaf1a5777b577c954985464d5bf05faa71676df99672c9f3dfe5ab8b70",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 4461,
+    "sha256": "7886ca15242060de88c4ba332b5f897703dd3b1fff5c73b886b2f2318af6bbcb",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/apply_phase2.py",
+    "bytes": 11612,
+    "sha256": "347709f4c7d436cb5bcf4e9191345578e14a4333ed8fc25acc1040b2bfa8b201",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/PHASE2_FILE_MAP.txt",
+    "bytes": 1110,
+    "sha256": "5fd4ca84c03f9eaf1812892c4f65c7467aa6908aef9547c0ab04162c3bfd5a74",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "2bf6cbb072baa49410dbec1fcd797e30dc9a81b5eef776b81ae075d35a514592",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase2.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase2/README_PHASE2.md",
+    "bytes": 8277,
+    "sha256": "45b9ac6d13ad3db7acb8cd75d06a6ea2aa2678edde9325ba53b9cc7a9c7c7757",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/vendor_eferu_foc.py",
+    "bytes": 2714,
+    "sha256": "7febca6f673fc023f4edd93f96885cbd44862469cb34e8e6a50928fcf6a76a94",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/README_PHASE1.md",
+    "bytes": 5812,
+    "sha256": "fd202e7c3d4d42ed7b53657a5d1bd285c32e1ee5a7d08e4b128f7e86c5ce6edc",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/apply_phase1.py",
+    "bytes": 10967,
+    "sha256": "943758ef1c2a54ac44ccb06d67372e0afd0cfce3ce0529c5f8ca174340b90872",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/SHA256SUMS.txt",
+    "bytes": 667,
+    "sha256": "25ffa22086329a7073d2877cc2d40cc13e48c48a475427f253fa1efc0121391c",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/PHASE1_FILE_MAP.txt",
+    "bytes": 1040,
+    "sha256": "892732720a89e49fe507ab7cd219fa587035d20b1b3e6a757efb3ec4e2e53485",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/overlay/HoverBoardGigaDevice/Inc/foc_config.h",
+    "bytes": 2246,
+    "sha256": "7dc04a9b27ca5c60373e54e511571b075e6d63f0c331177bf16dbee5ec95c067",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/overlay/HoverBoardGigaDevice/Inc/bldcFOC.h",
+    "bytes": 788,
+    "sha256": "5a5b66271392fcd3d3de2af457c4a8281b3a734a7a7d4cc8f7d2ce3bc295abc5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/firmware-projects/Gyroor_G5_Gen2_FOC_Phase1.zip",
+    "member": "Gyroor_G5_Gen2_FOC_Phase1/overlay/HoverBoardGigaDevice/Src/bldcFOC.c",
+    "bytes": 6656,
+    "sha256": "12ff750c4d21e955218486d5708a58096adb98e72738ecb212e0b479cb4176ae",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_MITM_v9_C6.zip",
+    "member": "BluePill_Hoverboard_UART_MITM_v9_C6/README_MITM_v9.txt",
+    "bytes": 3204,
+    "sha256": "36a00eca5ff7cf7e5cae96303efff545f44dd9efd32d128b21dd0dc698d36715",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_MITM_v9_C6.zip",
+    "member": "BluePill_Hoverboard_UART_MITM_v9_C6/BluePill_Hoverboard_UART_MITM_v9_C6.ino",
+    "bytes": 6193,
+    "sha256": "0b01ea7a16f8b4cec66b0c6ce5ddf997060401e1ba214233424c1d8aeb99c7ed",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v8_C6_HID/BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.ino",
+    "bytes": 11174,
+    "sha256": "90e9a755727e910aa641da5fbf5c1a7cf1fba00c24355d612bf3eaaedcc9291d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v8_C6_HID/README_v8_C6_HID.txt",
+    "bytes": 2114,
+    "sha256": "456c7ffbc72a9586cce5aa604f0eabd5ca02b81ee4c4b155fd10e9dabe939bcb",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v8_C6_HID.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v8_C6_HID/SnifferTypes.h",
+    "bytes": 290,
+    "sha256": "e4c1d070b78925ebb36babe9889797e4924aaf90fc30de9c7c5f271e4cce39c6",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v7_core300_C6/BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.ino",
+    "bytes": 10703,
+    "sha256": "0347b19ef7e8ed0edc18e9583c98db70abb31fb4d01b11543be4a62ba72116cf",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v7_core300_C6/README_C6.txt",
+    "bytes": 1272,
+    "sha256": "bea3791934464524cd5d64bba85a9b53a7eb4aab3ec5b78f51a902e2032c5452",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v7_core300_C6.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v7_core300_C6/SnifferTypes.h",
+    "bytes": 305,
+    "sha256": "f25ea42b8beca5ba5daa06d52d6cd6fa7122b176bd882083fa9360f590b28adf",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v6_core300_64k/BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.ino",
+    "bytes": 10677,
+    "sha256": "8d13ba85962404696ec2a61471271195b730fcac227841ecbd1adaf8f640c42a",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v6_core300_64k/README_CORE_3_0_0_64K.txt",
+    "bytes": 1586,
+    "sha256": "1f8e05132b35a1104b2b685141b3cea311a55262efb4100a48282d4039c9604d",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v6_core300_64k.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v6_core300_64k/SnifferTypes.h",
+    "bytes": 305,
+    "sha256": "f25ea42b8beca5ba5daa06d52d6cd6fa7122b176bd882083fa9360f590b28adf",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v5_core300.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v5_core300/BluePill_Hoverboard_UART_Sniffer_v5_core300.ino",
+    "bytes": 9985,
+    "sha256": "8ae621cb1f7eecf6cb69853233b276b165b1d4836559a24470934a442fb098ad",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v5_core300.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v5_core300/README_CORE_3_0_0_SETTINGS.txt",
+    "bytes": 2617,
+    "sha256": "98bb456e959a5bd74889f7451b8f59252fb99c32528486035e528d75033b90c5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v5_core300.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v5_core300/SnifferTypes.h",
+    "bytes": 287,
+    "sha256": "cb07ea99d486b1a1c48eaa05b6b177a1aad5ebf52abea518dc22d8a297ceb215",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v4.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v4/BluePill_Hoverboard_UART_Sniffer_v4.ino",
+    "bytes": 8733,
+    "sha256": "193e5f5059dbe0452d95a265ff1b751411a09ca30ef25cd51013fcd9a7bfc4e7",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v4.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v4/README_WIRING.txt",
+    "bytes": 1434,
+    "sha256": "fa6028fd479bf1451448c89b633789cb78eeb4617437c9dd665c06161cb7e043",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v4.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v4/SnifferTypes.h",
+    "bytes": 287,
+    "sha256": "cb07ea99d486b1a1c48eaa05b6b177a1aad5ebf52abea518dc22d8a297ceb215",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v3.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v3/BluePill_Hoverboard_UART_Sniffer_v3.ino",
+    "bytes": 8717,
+    "sha256": "abab6cfc68962062dd718b5d0d5ca34272fc11642e7f1d84b0fa629dc99854da",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v3.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v3/README_WIRING.txt",
+    "bytes": 1046,
+    "sha256": "94d809348c1e148b77d145e03dee04bb4805003043ed9491230ca99493b31bd5",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v3.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v3/SnifferTypes.h",
+    "bytes": 287,
+    "sha256": "cb07ea99d486b1a1c48eaa05b6b177a1aad5ebf52abea518dc22d8a297ceb215",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v2.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v2/BluePill_Hoverboard_UART_Sniffer_v2.ino",
+    "bytes": 8395,
+    "sha256": "4ddda109b66fdfd2854ecbbceeaa610033ae6cb53fcff2650bf969be479b91ce",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v2.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v2/README_WIRING.txt",
+    "bytes": 733,
+    "sha256": "f5bdf650d7e2a39c72d44aa933b4e6975ade075176e959cc022006179246807f",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer_v2.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer_v2/SnifferTypes.h",
+    "bytes": 287,
+    "sha256": "cb07ea99d486b1a1c48eaa05b6b177a1aad5ebf52abea518dc22d8a297ceb215",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer/BluePill_Hoverboard_UART_Sniffer.ino",
+    "bytes": 8629,
+    "sha256": "e758675a8443b83acdf2d593e361c499c8b253dad939d90a9fd8207076fe1c43",
+    "matches_existing_paths": []
+  },
+  {
+    "archive": "docs/chat-archive/packages/uart-tools/BluePill_Hoverboard_UART_Sniffer.zip",
+    "member": "BluePill_Hoverboard_UART_Sniffer/README_WIRING.txt",
+    "bytes": 2072,
+    "sha256": "6056520fd049c5fc0378d4205c8b4967580a9cd078623c6e55c057fabc872195",
+    "matches_existing_paths": []
+  }
+]

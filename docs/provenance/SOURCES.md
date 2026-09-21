@@ -560,3 +560,7 @@ The 29 rows below preserve the **2026-09-19 recorded survey**, not a claim about
 ## Audit change log
 
 - 2026-09-21: consolidated current-use evidence, missing earlier references, all 29 recorded survey entries, diagnostics, adjacent applications and unresolved leads. Corrected the modified framework's actual dependency status and distinguished survey revisions from build locks. Retained all earlier detailed source records and commit identifiers. Corrected stale automation/baseline wording in related documentation. No firmware, build selectors, workflows or dependency revisions changed.
+
+## Historical chat artifacts
+
+See the [chat artifact archive](../chat-archive/README.md) for recovered original packages, reports, build snapshots, and the explicitly incomplete conversation record.
