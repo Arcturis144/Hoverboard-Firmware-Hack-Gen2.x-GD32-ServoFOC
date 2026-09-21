@@ -4,12 +4,12 @@ This roadmap is deliberately incremental. Each revision should leave a buildable
 
 ## R0 - baseline and project structure
 
-- Current RoboDurden Gen2.x GD32 source remains functionally unchanged.
+- Preserve the inherited normal-application behavior while keeping the existing passive servo scaffold isolated. The branch already contains servo build selectors and bring-up code; it is not an untouched source snapshot.
 - Establish repository documentation and provenance.
 - Maintain a dated survey of the RoboDurden fork network and pin exact useful external references before adaptation.
 - Preserve MASTER/SLAVE as hardware variants, not servo control roles.
 - Establish the independent-servo application design.
-- Establish the intended Keil Studio / CMSIS build path.
+- Use the existing PlatformIO primary build path; retain Keil Studio / CMSIS [Common Microcontroller Software Interface Standard] as the secondary parity/debug route.
 - Prove the untouched firmware baseline builds before motor-control changes.
 
 ### R0 - To Do after first programming
@@ -59,7 +59,9 @@ The display is an optional diagnostic/dashboard client, analogous to an OBD-II (
 
 ## Cross-cutting source-integration plan
 
-Use external projects as targeted references rather than as a replacement firmware stack:
+Use [the maintained reference inventory](provenance/SOURCES.md) to distinguish actual dependencies, adopted planning concepts, candidates and unresolved leads. The selected CommunityGD32 platform and modified hoverboardhavoc framework are already build dependencies; survey pins do not lock their current selectors.
+
+Use other external projects as targeted references:
 
 - hoverboardhavoc `foc-reimplement-from-spec-tidy` at `7650dffafb5b1d3c816e22fff66ebf65ae7fb138`: primary Gen2.x/layout-2.1.20 FOC [field-oriented control] reference. Mine the pure math, Hall interpolation/PLL [phase-locked loop], PI [proportional-integral] current-loop structure, DTC [dead-time compensation], PWM [pulse-width modulation]-relative current sampling, and host tests. Do not import its motor-specific tuning constants as defaults.
 - hoverboardhavoc `hoverboard-gen2.1-hack-GD-imu` at `14e01f24ee5f5df9393a89d0ead54363e3210e9b` plus `HoverboardImu` at `b7682c98295b05ca43adcbd302954bd9134ecc0c`: board-family IMU [inertial measurement unit] and GD32F130C8 PlatformIO evidence. Treat the reported I²C [inter-integrated circuit] behavior and MPU6050-like device observations as external corroboration until checked on our boards.
@@ -69,6 +71,8 @@ Use external projects as targeted references rather than as a replacement firmwa
 - HUGS [Hoverboard Utility Gateway System], YujiKF, hoverboardhavoc joystick tooling, adj00080, and filagyuri projects remain secondary references for servo behavior, host control, wireless bridges, troubleshooting, and safety patterns.
 
 The full source register and fork survey are authoritative for exact provenance: `docs/provenance/SOURCES.md` and `docs/provenance/FORK_SURVEY.md`.
+
+Earlier references now retained in that inventory include SimpleFOC for control/sensor abstractions; mianos/esp32foc for commissioning identification; legacy ODrive and VESC [Vedder Electronic Speed Controller] for servo/protocol comparisons; Bipropellant for protocol separation; and OpenFFBoard/OFFBase/FFBeast for later force-feedback behavior. Inclusion does not change the chosen implementation sequence or establish source integration.
 
 ## R1 - current sensing foundation
 
@@ -126,6 +130,8 @@ Commissioning is split into three explicit responsibilities:
 Do not run the complete existing `RemoteAutodetect` state machine during normal operation. It changes GPIO [general-purpose input/output] modes, can actively drive the motor, and includes board-generic assumptions. In particular, its `CURRENT_DC` discovery/test path must not be allowed to classify PA6 as a DC [direct current] bus-current sensor on layout 2.1.20. PA6 remains diagnostic/unclassified until characterized.
 
 The Hall-order logic is valuable in two forms: commissioning may actively determine the saved Hall/phase relationship, while runtime should reuse only passive invariants such as rejection/counting of `000` and `111`, one-bit transition validation, expected sequence/direction, transition timing, and missed/duplicate/illegal-transition counters.
+
+The resistance/inductance/inverter-drop identification discussion was informed by [mianos/esp32foc](https://github.com/mianos/esp32foc). Its controller is open-loop V/Hz [volts per hertz]; treat the measurement methods as reviewable concepts, not a closed-loop motor backend or a source-copy authorization. The exact historical revision and license remain unresolved in the source inventory.
 
 Detailed motor identification is a commissioning operation, not a normal-boot operation. Static or slowly changing motor/controller parameters should be measured once for a particular motor/controller pairing, validated, versioned, and saved to flash. Normal startup should load the saved calibration and run only low-energy sanity checks plus genuinely dynamic calibration such as current-sensor zero offsets.
 

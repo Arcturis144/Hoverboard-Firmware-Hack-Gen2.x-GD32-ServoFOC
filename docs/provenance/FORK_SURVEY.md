@@ -4,14 +4,16 @@ This document records the GitHub fork-network/account survey requested for Servo
 
 Survey scope: 29 repositories returned by GitHub as forks/search matches for the RoboDurden Gen2.x GD32 code lineage, plus related repositories on those owners when they were relevant to motor control, IMU [inertial measurement unit], PlatformIO, RC [radio control], robotics, FOC [field-oriented control], or diagnostics.
 
+Audit note (2026-09-21): this is a historical survey, not a fresh count of today's forks. [SOURCES.md](SOURCES.md) is the maintained project-wide inventory, including earlier conversation references, current dependency evidence and unresolved leads. Survey revisions below are not necessarily enforced build locks.
+
 ## High-value findings
 
-| Source | Pinned reference | Useful material | ServoFOC disposition |
+| Source | Survey revision | Useful material | ServoFOC disposition |
 | --- | --- | --- | --- |
 | `hoverboardhavoc/Hoverboard-Firmware-Hack-Gen2.x-GD32` | `foc-reimplement-from-spec-tidy` @ `7650dffafb5b1d3c816e22fff66ebf65ae7fb138` | Layout-2.1.20 two-shunt current path, PWM [pulse-width modulation]-relative sampling, Clarke/Park, SVPWM [space-vector pulse-width modulation], Hall PLL [phase-locked loop], PI [proportional-integral] current control, anti-windup, DTC [dead-time compensation], tests | Primary FOC [field-oriented control] implementation reference; selectively adapt and revalidate |
 | `hoverboardhavoc/hoverboard-gen2.1-hack-GD-imu` | `14e01f24ee5f5df9393a89d0ead54363e3210e9b` | Split GD32F130C8 board-family IMU [inertial measurement unit], I²C [inter-integrated circuit] interrupt fix, PlatformIO build | High-value hardware/build corroboration |
 | `hoverboardhavoc/HoverboardImu` | `b7682c98295b05ca43adcbd302954bd9134ecc0c` | Raw IMU [inertial measurement unit] probing at address `0x68`, device marking/register behavior | Raw-sensor reference; avoid relying on genuine MPU6050 DMP [digital motion processor] behavior |
-| `hoverboardhavoc/gd32-pio-spl-package` | `8849cb2af35f16431734d9e9c101de648f54f061` | PlatformIO/GD32 SPL [standard peripheral library] clock-source override | Build-system reference only unless deliberately promoted |
+| `hoverboardhavoc/gd32-pio-spl-package` | `8849cb2af35f16431734d9e9c101de648f54f061` | PlatformIO/GD32 SPL [standard peripheral library] clock-source override | Already selected as the build/framework dependency by platformio.ini; branch selector is floating, not locked to this survey revision |
 | `hoverboardhavoc/regtrace` | `673e6b005c8272d0bf9ccd2b63938630ad4ab70e` | Register-level peripheral equivalence testing | Development/test validation tool |
 | `WestlingPi/Hoverboard-Firmware-Hack-Gen2.x-GD32` | `debug-safety-limit` @ `32eafc60ae4377d24e3c7824f92bed0fd5fada89` | Command plausibility rejection and error counters | Adopt the safety pattern behind the common command validator |
 | `Homobonus/Hoverboard-Firmware-Hack-Gen2.x-GD32` | `spatialrag-agv` @ `4986a0e4de308b395b9bcce400c299c547e20985` | Last-valid-link age, master/slave diagnostics, host UART [universal asynchronous receiver-transmitter] parser/logger | Telemetry and communications reference |

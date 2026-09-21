@@ -115,7 +115,7 @@ Park/hold is not defined as maximum continuous stationary torque. The controller
 
 ## Reference implementations
 
-The architecture intentionally mines proven pieces from external projects without making them production dependencies. The primary current references are the hoverboardhavoc layout-2.1.20 FOC [field-oriented control] branch, the hoverboardhavoc GD32F130C8 IMU [inertial measurement unit]/PlatformIO work, Jodaille/EFeru iBUS [FlySky serial receiver protocol] handling, WestlingPi/Homobonus communication safety, lucai11 RemoteAutodetect/ADC [analog-to-digital converter] work, and HUGS [Hoverboard Utility Gateway System] servo/robot concepts. Exact pinned revisions and licensing notes are maintained in `docs/provenance/SOURCES.md`.
+The architecture distinguishes inherited code and selected framework dependencies from candidate algorithms. [The maintained reference inventory](../provenance/SOURCES.md) records both. Externally reported results require validation on our hardware before adoption. The primary current references are the hoverboardhavoc layout-2.1.20 FOC [field-oriented control] branch, the hoverboardhavoc GD32F130C8 IMU [inertial measurement unit]/PlatformIO work, Jodaille/EFeru iBUS [FlySky serial receiver protocol] handling, WestlingPi/Homobonus communication safety, lucai11 RemoteAutodetect/ADC [analog-to-digital converter] work, and HUGS [Hoverboard Utility Gateway System] servo/robot concepts. Exact pinned revisions and licensing notes are maintained in `docs/provenance/SOURCES.md`.
 
 ## Upstream integration
 

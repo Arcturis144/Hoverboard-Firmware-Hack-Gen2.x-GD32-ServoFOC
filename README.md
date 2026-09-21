@@ -13,6 +13,10 @@ The project retains the upstream firmware and its normal hoverboard applications
 - Keep hardware-specific timing, sensing, and pin mapping below reusable control interfaces so additional hoverboard boards can be supported later.
 - Preserve compatibility with upstream Gen2.x development wherever practical.
 
+## Project reference inventory
+
+Start with [the maintained reference inventory](docs/provenance/SOURCES.md). It records what this branch actually uses, what could be adapted, exact recorded revisions, useful subsystems, licensing gaps, the historical fork roster, and unresolved conversation references. Add new sources there so they remain findable outside the conversation.
+
 ## Reference-source policy
 
 The public fork network around the RoboDurden Gen2.x GD32 firmware was surveyed on 2026-09-19. Useful work is treated as evidence and reference material, not as code to import wholesale. Exact repositories, branches, commits, licensing notes, and intended reuse are tracked in `docs/provenance/SOURCES.md`; the fork-by-fork survey is in `docs/provenance/FORK_SURVEY.md`.
@@ -24,7 +28,7 @@ The highest-value references currently include the hoverboardhavoc layout-2.1.20
 
 `main` is intended to remain close to RoboDurden upstream. Active servo work is developed on dedicated branches, beginning with `servo/r0-baseline`.
 
-R0 establishes project structure and documentation only. It intentionally does not change motor behavior, PWM timing, ADC timing, current control, or FOC operation.
+This planning thread remains documentation-focused. The current branch already contains an R0/R0.1 passive servo scaffold and build selectors; it is not documentation-only. The scaffold selects the inherited sine backend and keeps drive authority disabled. Closed-loop FOC [field-oriented control] integration and hardware validation remain separate implementation work. See [R0 build notes](docs/servo/R0_BUILD.md) and [passive bring-up notes](docs/servo/R0_BRINGUP.md) for the inspected state.
 
 See:
 

@@ -44,7 +44,7 @@ PlatformIO is the primary R0 build path because the upstream Gen2.x repository a
 
 This choice is additionally corroborated by hoverboardhavoc `hoverboard-gen2.1-hack-GD-imu` commit `14e01f24ee5f5df9393a89d0ead54363e3210e9b`, which was ported specifically to a split GD32F130C8 hoverboard motherboard and uses PlatformIO. That project references hoverboardhavoc `gd32-pio-spl-package` branch `hoverboardhavoc/add__PIO_DONT_SET_CLOCK_SOURCE__`, pinned here at `8849cb2af35f16431734d9e9c101de648f54f061`, to avoid the framework overriding the intended clock source.
 
-These are build-system references, not automatic production dependencies. ServoFOC should only pin or vendor a modified SPL [standard peripheral library] package after comparing its behavior with the current upstream package and documenting why the change is required.
+The modified SPL [standard peripheral library] package is already a selected build/framework dependency: `platformio.ini` explicitly overrides `framework-spl-gd32` with hoverboardhavoc's `hoverboardhavoc/add__PIO_DONT_SET_CLOCK_SOURCE__` branch. The platform itself is selected from `CommunityGD32Cores/platform-gd32` without an immutable revision. The survey commit above records an examined revision; it does not lock the actual build to that revision. Capture resolved package revisions and compare behavior before changing dependency selectors. The current-use evidence and outstanding provenance work are maintained in [the project reference inventory](../provenance/SOURCES.md).
 
 Two ServoFOC environments are defined in `HoverBoardGigaDevice/platformio.ini`:
 
@@ -78,7 +78,7 @@ The standard upstream `Hoverboard.uvprojx` GD32F130 target also remains present 
 
 ## R0 build validation
 
-The GitHub Actions PlatformIO build workflow is now present and the first CI [continuous integration] run successfully compiled both ServoFOC hardware variants from a clean runner. The upstream-reference environment should still be used when checking toolchain parity after major low-level changes.
+At the audited snapshot `e4f0e27b07dab6e30a98e02dd6a7cc19baddca7e`, the root GitHub Actions firmware workflow has been removed. This branch therefore does not currently provide an active automatic build/artifact workflow. Historical build claims require their own run/commit evidence; this documentation audit did not build firmware. Use the local commands above, and record build logs and resolved dependency revisions when validating a build. The upstream-reference environment remains the comparison target for toolchain parity.
 
 The relevant environments are:
 
@@ -88,6 +88,6 @@ servo_G5_master
 servo_G5_slave
 ```
 
-The stock GD32F130C8 build establishes upstream/toolchain parity; the two ServoFOC builds validate the new application and hardware-variant selectors. The R0.1 first-flash behavior and debugger-visible monitor are documented in `R0_BRINGUP.md`.
+Successful comparison builds are required to establish upstream/toolchain parity and validate the two application/hardware-variant selectors; the presence of these environments alone is not build evidence. The R0.1 first-flash behavior and debugger-visible monitor are documented in `R0_BRINGUP.md`.
 
 For later low-level timer/ADC [analog-to-digital converter] changes, hoverboardhavoc `regtrace` at `673e6b005c8272d0bf9ccd2b63938630ad4ab70e` is a useful verification tool/reference. It compares peripheral register programming across implementations and already contains GD32F1x0 timer, ADC [analog-to-digital converter], DMA [direct memory access], USART [universal synchronous/asynchronous receiver-transmitter], flash, watchdog, and clock work relevant to this firmware family.

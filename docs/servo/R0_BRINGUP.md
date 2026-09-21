@@ -30,11 +30,11 @@ R0.1 deliberately reports `0xFFFF` for `phase_a_adc_raw`, `phase_b_adc_raw`, and
 
 ## Build outputs
 
-GitHub Actions builds both physical PCB variants on every `servo/**` push:
+The root GitHub Actions firmware workflow was removed at `e4f0e27b07dab6e30a98e02dd6a7cc19baddca7e`; automatic artifacts are not currently produced by this branch. Build locally from `HoverBoardGigaDevice` with `pio run -e <environment>` for the required PCB [printed circuit board] variant:
 
 - `servo_G5_master`
 - `servo_G5_slave`
 
-Each workflow artifact contains `firmware.bin` for flashing and `firmware.elf` for symbols/source-level debugging.
+After a successful local build, expected outputs are `.pio/build/<environment>/firmware.bin` for flashing and `firmware.elf` for symbols/source-level debugging. Their existence and build success must be verified for the exact revision; this documentation audit did not generate binaries.
 
 For the first hardware attempt, flash only the binary matching the physical MASTER or SLAVE PCB variant.
