@@ -1,5 +1,7 @@
 # Recovered chat artifacts
 
+The [exported project conversation record](conversation/export-2026-09-22/README.md) now supplements these recovered files. It includes the five exported planning/continuation trees and a repository-link reconciliation.
+
 Original bytes are preserved. Identical files already in the repository are linked instead of copied. Identical recovered copies share one archive path. Standalone reports remain readable even when also bundled inside a historical package.
 
 | Original file | Created (UTC) | Disposition | Location |
