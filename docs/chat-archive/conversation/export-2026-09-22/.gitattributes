@@ -1,0 +1,2 @@
+# Preserve exported message text bytes, including original line endings.
+*.txt -text

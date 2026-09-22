@@ -21,7 +21,7 @@ This is the project's maintained entry point for external repositories, inherite
 
 The audit combined the supplied planning-conversation continuation, targeted retrieval of older project conversations, all current planning/reference documents, the branch tree, build manifests, selected local source headers, and external repository metadata/readmes. Historical searches covered August hardware/radio-control discussions; September 5–15 monitoring, architecture and lineage; September 16–21 protocols, commissioning, PlatformIO and fork-survey discussions; and the adjacent joystick discussion.
 
-**A complete verbatim conversation export was not available.** Retrieval can omit messages or return material from another thread. This inventory contains the references recovered and recorded by this audit, not a claim that every historical message has been exhaustively read. Names with unresolved identities are retained below. A future transcript pass should append omissions and update this coverage statement.
+**Transcript supplement, 2026-09-22:** The user supplied a full account export. The [project conversation archive](../chat-archive/conversation/export-2026-09-22/README.md) preserves all user/assistant text and multimodal-text nodes in the five identified planning/continuation trees, including alternate text nodes. A literal GitHub-link extraction over those nodes was reconciled with this register. This closes the missing-transcript gap for those trees; it does not establish coverage of every other account conversation, restore absent non-text material, or validate historical technical claims. The earlier source/code audit remains scoped to its recorded baseline.
 
 Evidence priority: inspected source/build configuration at an exact commit > current project documentation > external source's own claims > retrieved historical assistant claims. External hardware results are not measurements of our own board. This audit is a documentation/source-intake review, not a firmware build, hardware test, full license audit, or line-by-line review of every candidate.
 
@@ -516,7 +516,7 @@ The 29 rows below preserve the **2026-09-19 recorded survey**, not a claim about
 
 | Gap | What is known | Required next evidence |
 | --- | --- | --- |
-| Full conversation coverage | Supplied continuation and multiple targeted historical searches were reviewed; retrieval omitted portions and returned some adjacent-thread material. | Import a complete user-provided transcript/export for a literal link/name extraction and reconcile against this inventory. Until then, do not label the history audit exhaustive. |
+| Full conversation coverage | Five supplied project conversation trees are now archived, including alternate text nodes; all literal GitHub links in their text were reconciled. | Other project discussions outside those five trees and references expressed only through citation tokens or unresolved names may still require separate review. See the export manifest for exact scope. |
 | Separate EFeru implementation package | Earlier messages/package summaries report a generated core and safe-bring-up wrapper. This branch still selects the sine backend. | Exact artifact/repository, branch, commit, donor revision and changed files; do not infer current adoption from prior assistant statements. |
 | HoverMower / ROSMower / AgOpenGPS examples | Historical application names recovered; exact original source identities missing. | Recover original message/link or have the user identify the project. Do not substitute similarly named repositories. |
 | HUGS [Hoverboard Utility Gateway System] parent / Erik-96 lineage | RobDoozer's exact reference is preserved; earlier account survey mentioned additional lineage. | Resolve the original gearsincorg and Erik-96 repository identities/revisions before claiming an additional donor. |
@@ -563,4 +563,16 @@ The 29 rows below preserve the **2026-09-19 recorded survey**, not a claim about
 
 ## Historical chat artifacts
 
-See the [chat artifact archive](../chat-archive/README.md) for recovered original packages, reports, build snapshots, and the explicitly incomplete conversation record.
+See the [chat artifact archive](../chat-archive/README.md) for recovered original packages, reports, build snapshots, and the exported project transcripts. The earlier incomplete reconstruction remains preserved as a historical record.
+
+## Sources recovered from the supplied export — 2026-09-22
+
+These are historical reference additions, not firmware integration changes. Repository identities and top-level license metadata were checked on 2026-09-22; candidate code was not re-reviewed or imported. The [literal-link reconciliation](../chat-archive/conversation/export-2026-09-22/REPOSITORY_LINKS.md) records exact message identifiers, including all existing references encountered again.
+
+| Source | Current-use evidence | Potential use and next review | License metadata |
+| --- | --- | --- | --- |
+| [KoshiroRobot/FOC-Driver](https://github.com/KoshiroRobot/FOC-Driver) | HISTORICAL-REFERENCE / CANDIDATE. The user explicitly requested review; later discussion named `set_pinout1.zip` as its embedded-code archive. The conversation records uploaded Python files and that archive. No adoption in the active firmware is established by this supplement. | Compare the actual motor-control loop and Python host interface against our timing, current-sampling, and commissioning requirements. Review an exact revision and uploaded-file provenance before reuse. | MIT [Massachusetts Institute of Technology] license reported by repository metadata; inspect individual bundled files before copying. |
+| [Serasidis/STM32_HID_Bootloader](https://github.com/Serasidis/STM32_HID_Bootloader) | HISTORICAL-REFERENCE. Earlier instructions referenced `hid_generic_pc13.bin` for the separate STM32 Blue Pill diagnostic board. This does not establish that it was installed or that it belongs on the GD32 motor controller. | Optional USB [universal serial bus] HID [human interface device] flashing workflow for the diagnostic board. Verify flash allocation, linker offset, board compatibility and exact release before use. | GPL-2.0 [GNU General Public License, version 2] metadata; check the selected files and license terms. |
+| [stm32duino/BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles) | HISTORICAL-REFERENCE / HOST-SETUP. The transcript used its package index to install STM32duino for the Blue Pill diagnostic workflow. It is not evidence of a GD32 firmware build dependency. | Record the exact board-core package and version when reproducing the historical serial-monitor/sniffer builds. | BSD-3-Clause [Berkeley Software Distribution, three-clause] metadata; distributed packages may carry their own licenses. |
+
+One extracted user link reads `EFeru/hoverboard-firmware-hack-FOCmodified`, immediately followed by “to work on my specific board”. It is recorded as a malformed prose-joined reference to the already-listed EFeru project, not invented as another donor repository. `github.com/user-attachments/assets` is an attachment endpoint rather than a repository.
