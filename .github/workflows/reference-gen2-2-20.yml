@@ -13,25 +13,21 @@ permissions:
   contents: read
 
 jobs:
-  build-reference:
+  f103-reference:
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
-      - name: Check out research branch only
+      - name: Check out research branch
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Install PlatformIO
         run: python -m pip install "platformio>=6.1,<7"
-
-      - name: Build pinned Gen2.2.20 reference ELF
+      - name: Build pinned Gen2.2.20 GD32F103 reference ELF
         run: bash research/stock-fw/build-gen2-2-20.sh
-
-      - name: Upload reference dictionary
+      - name: Upload F103 reference dictionary
         if: success()
         uses: actions/upload-artifact@v4
         with:
@@ -39,12 +35,42 @@ jobs:
           path: research-artifacts/gen2-2-20/output/
           retention-days: 30
           if-no-files-found: error
-
-      - name: Upload diagnostics if build fails
+      - name: Upload F103 diagnostics if build fails
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: gen2-2-20-f103-build-failure-log
           path: research-artifacts/gen2-2-20/output/build.log
+          retention-days: 7
+          if-no-files-found: ignore
+
+  f130-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Check out research branch
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PlatformIO
+        run: python -m pip install "platformio>=6.1,<7"
+      - name: Build both pinned GD32F130 layout-2.1.20 variants
+        run: bash research/stock-fw/build-gen2-1-20-f130.sh
+      - name: Upload F130 reference dictionaries
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen2-1-20-f130-reference-dictionaries
+          path: research-artifacts/gen2-1-20-f130/output/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Upload F130 diagnostics if build fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen2-1-20-f130-build-failure-log
+          path: research-artifacts/gen2-1-20-f130/output/
           retention-days: 7
           if-no-files-found: ignore

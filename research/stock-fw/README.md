@@ -30,7 +30,28 @@ Build script output lives under `research-artifacts/gen2-2-20/`, not the product
 - `manifest.txt` — source pin and build environment
 - `build.log` — compiler output for reproducibility
 
-Next stages: build the Gen2.1.20/GD32F130 reference, normalize function fingerprints, then match both reference builds against the preserved factory A/master and B/slave binary images.
+## Matched-processor reference: GD32F130C8 / Gen2.1.20
+
+The **same pinned source commit** above contains an existing PlatformIO environment `genericGD32F130C8` (`TARGET=1`). Choosing `LAYOUT 20` selects `defines_2-1-20.h` — the F130 counterpart to F103's `defines_2-2-20.h`. That is the correct way to compile this revision for our MCU. A configuration using `TARGET=2` would still use the F103 peripheral definitions even if we renamed the board.
+
+The source's F130 header lists `PHASE_CURRENT_Y=PB0` and `PHASE_CURRENT_B=PB1`. Prior factory firmware disassembly established the two likely shunt ADC [analog-to-digital converter] inputs as `PB0` and `PA0` (channel 8 and channel 0). The corresponding F103 layout header lists `PB0/PA0` as well.
+
+To keep this discrepancy transparent, run:
+
+```sh
+bash research/stock-fw/build-gen2-1-20-f130.sh
+```
+
+That produces **two non-driving-policy-UNMODIFIED reference builds** under `research-artifacts/gen2-1-20-f130/output/`:
+
+1. `upstream/` — pristine F130 board header (`PB0/PB1` current sensor macros).
+2. `stock-pa0/` — research-only local header correction to `PB0/PA0` (not propagated to either upstream or ServoFOC).
+
+Each output includes named ELF [Executable and Linkable Format], BIN [binary], linker map, disassembly, symbol table, and `functions.csv`. `comparison.txt` records SHA-256 [Secure Hash Algorithm 256-bit] hashes and whether the current normal firmware references the changed current-pin macro. Matching BIN [binary] hashes **would not validate either pin assignment**; unused macros do not change compiled code.
+
+**Neither output has been hardened for safe operation**. The upstream `REMOTE_DUMMY` motor-drive behavior is still present. These are static reverse-engineering artifacts only; do not flash them.
+
+Next stages: compare the F130 and F103 reference functions with the factory master/slave binaries, then normalize function fingerprints for call-graph and peripheral-access matching.
 
 **Safety:** The Gen2 source's default `SINGLE` / `REMOTE_DUMMY` mode may command motor rotation. This is a disassembly/reference build only; do not flash or energize a motor with it.
 
