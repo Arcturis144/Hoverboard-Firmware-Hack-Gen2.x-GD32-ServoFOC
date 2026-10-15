@@ -99,7 +99,7 @@ PY
   cp "$BIN_DIR/firmware.elf" "$DEST/firmware.elf"
   cp "$BIN_DIR/firmware.bin" "$DEST/firmware.bin"
 
-  MAP_PATH="$(find "$PIO_PROJECT" -type f -name reference.map -print -quit)"
+  MAP_PATH="$(find "$PIO_PROJECT" -type f \( -name reference.map -o -name firmware.map \) -print -quit)"
   if [[ -z "$MAP_PATH" ]] || [[ ! -s "$MAP_PATH" ]]; then
     echo "Missing linker map for $VARIANT" >&2
     exit 5
