@@ -1,0 +1,50 @@
+name: Gen2.2.20 Reference Dictionary
+
+on:
+  push:
+    branches:
+      - research/stock-fw-decoding
+    paths:
+      - ".github/workflows/reference-gen2-2-20.yml"
+      - "research/stock-fw/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out research branch only
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PlatformIO
+        run: python -m pip install "platformio>=6.1,<7"
+
+      - name: Build pinned Gen2.2.20 reference ELF
+        run: bash research/stock-fw/build-gen2-2-20.sh
+
+      - name: Upload reference dictionary
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen2-2-20-f103-reference-dictionary
+          path: research-artifacts/gen2-2-20/output/
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload diagnostics if build fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen2-2-20-f103-build-failure-log
+          path: research-artifacts/gen2-2-20/output/build.log
+          retention-days: 7
+          if-no-files-found: ignore
