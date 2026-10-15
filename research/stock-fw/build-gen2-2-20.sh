@@ -70,10 +70,13 @@ test -s "$BIN" || { echo "BIN not generated" >&2; exit 4; }
 cp "$ELF" "$OUTPUT/firmware.elf"
 cp "$BIN" "$OUTPUT/firmware.bin"
 
-if [[ -s "$PIO_PROJECT/reference.map" ]]; then
-    cp "$PIO_PROJECT/reference.map" "$OUTPUT/firmware.map"
+MAP_PATH="$(find "$PIO_PROJECT" -type f \( -name reference.map -o -name firmware.map \) -print -quit)"
+if [[ -n "$MAP_PATH" ]] && [[ -s "$MAP_PATH" ]]; then
+    cp "$MAP_PATH" "$OUTPUT/firmware.map"
 else
-    echo "Missing linker map" >&2
+    echo "Linker map not found in PlatformIO build tree; available .map files:" >&2
+    find "$PIO_PROJECT" -type f -name '*.map' -print >&2 || true
+    echo "Compiler/linker output was successful; map packaging needs adjustment" >&2
     exit 5
 fi
 
