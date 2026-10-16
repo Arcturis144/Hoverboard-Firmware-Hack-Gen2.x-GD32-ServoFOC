@@ -190,9 +190,17 @@ class Watcher:
         self.phase_changes = {}                 # label -> {addr: count}
         self.phase_start = None
         self.phase_order = ["start"]
+        self._explicit_phase = False
 
     def set_phase(self, label):
         t = self.clock()
+        if not self._explicit_phase and self.samples == 0:
+            # a label set before any sample replaces the implicit "start" baseline instead of following it
+            self._explicit_phase = True
+            self.phase_order = [label]
+            self.phase = label
+            self.phase_start = None if self.t0 is None else t
+            return
         if self.phase_start is not None:
             self.phase_time[self.phase] = self.phase_time.get(self.phase, 0.0) + (t - self.phase_start)
         self.phase_start = t
