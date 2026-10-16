@@ -26,8 +26,14 @@ Safety rules baked in
   * Do not run with motor phases connected and the wheel free to turn until you understand the
     stock outputs; halting a core with TIMER0 outputs enabled can leave a gate driver stuck on.
 
+Labelling stimuli (--annotate)
+  Type a label and press Enter when you change what you are doing ("idle", "tilt forward",
+  "left pad pressed", ...). Changes are then counted per label, and stimulus.csv lists bytes that
+  move much more under a label than during the first (baseline) label.
+
 Usage
   python3 swd_watch.py --duration 30 --out-dir run1 [--pc-sample] [--series motor_state_260,hall_angle_294]
+  python3 swd_watch.py --duration 0 --annotate --out-dir run2      # run until Ctrl-C, label as you go
 Backends: pyOCD (default, `pip install pyocd`; any probe pyOCD supports). Tested only against
 a simulated target in test_swd_watch.py - NOT yet against hardware.
 """
@@ -179,6 +185,20 @@ class Watcher:
         self.series = []                        # (t, {name: value})
         self.series_names = []
         self.change_log = []                    # (t, addr, old, new)
+        self.phase = "start"
+        self.phase_time = {}                    # label -> seconds spent
+        self.phase_changes = {}                 # label -> {addr: count}
+        self.phase_start = None
+        self.phase_order = ["start"]
+
+    def set_phase(self, label):
+        t = self.clock()
+        if self.phase_start is not None:
+            self.phase_time[self.phase] = self.phase_time.get(self.phase, 0.0) + (t - self.phase_start)
+        self.phase_start = t
+        self.phase = label
+        if label not in self.phase_order:
+            self.phase_order.append(label)
 
     def preflight(self):
         dh = self.b.read32(DHCSR)
@@ -193,6 +213,7 @@ class Watcher:
         t = self.clock()
         if self.t0 is None:
             self.t0 = t
+            self.phase_start = t
         for i, (addr, n) in enumerate(self.ranges):
             data = self.b.read_block(addr, n)
             old = self.prev.get(i)
@@ -201,10 +222,12 @@ class Watcher:
                     if data[k] != old[k]:
                         a = addr + k
                         self.changes[a] = self.changes.get(a, 0) + 1
+                        pc_ = self.phase_changes.setdefault(self.phase, {})
+                        pc_[a] = pc_.get(a, 0) + 1
                         d = self.values.setdefault(a, {})
                         if len(d) < 32 or data[k] in d:
                             d[data[k]] = d.get(data[k], 0) + 1
-                        self.change_log.append((t - self.t0, a, old[k], data[k]))
+                        self.change_log.append((t - self.t0, a, old[k], data[k], self.phase))
             else:
                 for k in range(n):
                     self.last[addr + k] = data[k]
@@ -276,15 +299,52 @@ def write_outputs(w, out_dir):
             for t, vals in w.series:
                 wr.writerow(["%.6f" % t] + [vals[n] for n in w.series_names])
     with open(os.path.join(out_dir, "changes.jsonl"), "w") as fh:
-        for t, a, o, n in w.change_log:
-            fh.write(json.dumps({"t": round(t, 6), "addr": "0x%08X" % a, "old": o, "new": n}) + "\n")
+        for t, a, o, n, ph in w.change_log:
+            fh.write(json.dumps({"t": round(t, 6), "addr": "0x%08X" % a, "old": o, "new": n, "phase": ph}) + "\n")
+    if len(w.phase_order) > 1:
+        w.set_phase(w.phase)          # close the running phase
+        with open(os.path.join(out_dir, "phases.csv"), "w", newline="") as fh:
+            wr = csv.writer(fh)
+            wr.writerow(["addr", "name"] + ["%s (%.1fs)" % (p, w.phase_time.get(p, 0)) for p in w.phase_order])
+            addrs = sorted({a for d in w.phase_changes.values() for a in d})
+            for a in addrs:
+                wr.writerow(["0x%08X" % a, name_for_address(w.map, a) or ""] +
+                            [w.phase_changes.get(p, {}).get(a, 0) for p in w.phase_order])
+        with open(os.path.join(out_dir, "stimulus.csv"), "w", newline="") as fh:
+            wr = csv.writer(fh)
+            wr.writerow(["phase", "addr", "name", "changes", "changes_per_s", "baseline_per_s"])
+            for r in stimulus_rows(w):
+                wr.writerow(r)
     return rows
+
+
+def stimulus_rows(w, min_changes=3, ratio=5.0):
+    """Bytes whose change rate under a label is >= ratio x the baseline (first label) rate."""
+    base = w.phase_order[0]
+    base_t = max(w.phase_time.get(base, 0.0), 1e-9)
+    out = []
+    for p in w.phase_order[1:]:
+        t = max(w.phase_time.get(p, 0.0), 1e-9)
+        for a, c in w.phase_changes.get(p, {}).items():
+            if c < min_changes:
+                continue
+            b = w.phase_changes.get(base, {}).get(a, 0) / base_t
+            if c / t >= ratio * max(b, 1.0 / base_t if base_t > 0 else 0):
+                out.append((p, "0x%08X" % a, name_for_address(w.map, a) or "", c, round(c / t, 2), round(b, 2)))
+    out.sort(key=lambda r: (r[0], -r[3]))
+    return out
 
 
 def summary(w, rows, top=25):
     lines = ["samples: %d  achieved rate: %.1f Hz  mean read time: %.2f ms" %
              (w.samples, w.rate(), 1000.0 * w.read_time / max(w.samples, 1)),
              "NOTE: sampled view; anything changing faster than the rate above is aliased (counts are lower bounds)."]
+    if len(w.phase_order) > 1:
+        lines.append("labels: " + ", ".join("%s (%.1fs)" % (p, w.phase_time.get(p, 0)) for p in w.phase_order))
+        st = stimulus_rows(w)
+        lines.append("bytes that move much more under a label than at baseline: %d (see stimulus.csv)" % len(st))
+        for r in st[:15]:
+            lines.append("  [%s] %s %-26s changes=%d (%.1f/s vs %.1f/s baseline)" % (r[0], r[1], r[2], r[3], r[4], r[5]))
     lines.append("most active bytes:")
     for r in rows[:top]:
         lines.append("  %s %-28s changes=%-6d distinct=%-3d range=%d..%d" %
@@ -307,6 +367,17 @@ def run(backend, args, ram_map, funcs, clock=time.perf_counter, sleep=time.sleep
     if args.series:
         w.series_names = [s for s in args.series.split(",") if s]
     w.preflight()
+    if getattr(args, "annotate", False):
+        import threading
+
+        def reader():
+            n = 0
+            for line in sys.stdin:
+                n += 1
+                w.set_phase(line.strip() or "phase%d" % n)
+                print("-- label: %s" % w.phase, flush=True)
+        threading.Thread(target=reader, daemon=True).start()
+        print("Type a label and press Enter whenever the stimulus changes (first label = baseline).", flush=True)
     end = clock() + args.duration if args.duration else None
     try:
         while end is None or clock() < end:
@@ -330,6 +401,7 @@ def build_parser():
     ap.add_argument("--peripheral", action="append", help="ADDR:LEN peripheral range to read (side-effect ranges are blocked)")
     ap.add_argument("--unsafe-peripherals", action="store_true", help="allow blocked ranges (reads may disturb the firmware)")
     ap.add_argument("--series", help="comma-separated ram_map names to log as a time series")
+    ap.add_argument("--annotate", action="store_true", help="read stimulus labels from stdin (Enter = new label)")
     ap.add_argument("--pc-sample", action="store_true", help="sample DWT_PCSR (sets DEMCR.TRCENA once)")
     ap.add_argument("--probe-id", help="pyOCD probe unique id")
     ap.add_argument("--freq", type=int, default=1_000_000, help="SWD clock in Hz")

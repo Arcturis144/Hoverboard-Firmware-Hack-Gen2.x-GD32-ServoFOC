@@ -50,6 +50,36 @@ or command input changing; a settings change over the UART link; a deliberate th
 you can do it safely. Then compare `activity.csv` with `ram_map.json`: bytes that move and have no name
 are the next decoding targets.
 
+## Stimulus sessions with an ST-Link (tilt, foot pads, optical switches)
+
+Wiring: ST-Link SWDIO, SWCLK and GND to the board's SWD header. Leave 3.3 V and NRST disconnected so the
+board stays powered by its own battery supply (only one thing should power the 3.3 V rail). The ST-Link
+is a pyOCD-supported probe; on Windows pyOCD may need the WinUSB/libusb driver for it (for example via
+Zadig) instead of ST's own driver - not verified here.
+
+Run with labels and the GPIO input registers, which have no read side effects and are not blocked:
+
+```sh
+python3 swd_watch.py --duration 0 --annotate --pc-sample --out-dir tilt1 \
+    --peripheral 0x48000010:4 --peripheral 0x48000410:4 --peripheral 0x48000810:4
+```
+
+Then type a label and press Enter at each change, for example: `idle` (first label is the baseline - hold
+still for 10 s), `tilt forward`, `tilt back`, `level`, `left pad pressed`, `left pad released`, `right pad
+pressed`, `both released`. Press Ctrl-C to stop. Do each action for several seconds, one at a time.
+
+Results: `stimulus.csv` lists bytes that change at least 5x faster under a label than during `idle`;
+GPIO input-register bits flipping under a pad label are the optical switches' pins, and RAM bytes
+that follow a tilt are the IMU result or its filtered value. `phases.csv` shows the per-label counts for
+every byte that moved at all.
+
+Notes:
+- The IMU and pad inputs are probably wired to one board. The RAM names in `ram_map.json` come from the
+  slave image, but the master's code matched the slave's (Phase 6), so the same addresses should apply on it.
+- Anything that arrives over I2C or SPI shows up here only after the firmware copies it into RAM; the
+  peripheral data registers are deliberately not read.
+- Keep the wheels off the ground and the motor phases disconnected for the first sessions.
+
 ## Files
 
 - `swd_watch.py` - the tool. `PyOcdBackend` is the only hardware-facing class.

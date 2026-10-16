@@ -19,6 +19,7 @@ class FakeBackend:
         self.halted = halted
         self.demcr = 0
         self.n = 0
+        self.stim_on = False
         self.pcs = [0x08002530, 0x08002530, 0x08004AC4, 0x08006E40, 0xFFFFFFFF]
 
     def read32(self, addr):
@@ -38,6 +39,8 @@ class FakeBackend:
         self.mem[0x260] = (self.n // 3) % 5                         # motor_state_260 changes slowly
         struct.pack_into("<H", self.mem, 0x294, (self.n * 10922) & 0xFFFF)   # hall angle ramps
         self.mem[0x69] = 1 if self.n > 5 else 0                      # thermal flag latches once
+        if self.stim_on:
+            self.mem[0x150] = self.n & 0xFF                          # only moves while the stimulus is applied
         return bytes(self.mem[off:off + n])
 
     def write32_debug(self, addr, value):
@@ -120,5 +123,23 @@ assert writes == [("write32", sw.DEMCR, sw.TRCENA)], writes
 fb2 = FakeBackend()
 sw.run(fb2, args(duration=0.05, out_dir=tempfile.mkdtemp()), ram_map, funcs, clock=fake_clock(), sleep=lambda s: None)
 assert not [c for c in fb2.calls if c[0] == "write32"], "no writes at all without --pc-sample"
+
+# 6. stimulus labelling: a byte that only moves under "tilt forward" is reported, steady/baseline noise is not
+fb3 = FakeBackend()
+w3 = sw.Watcher(fb3, [(sw.SRAM_BASE, 0xB00)], ram_map, funcs, clock=fake_clock())
+w3.preflight()
+for _ in range(30):
+    w3.sample()
+w3.set_phase("tilt forward")
+fb3.stim_on = True
+for _ in range(30):
+    w3.sample()
+d3 = tempfile.mkdtemp()
+sw.write_outputs(w3, d3)
+st = sw.stimulus_rows(w3)
+assert any(r[0] == "tilt forward" and r[1] == "0x20000150" for r in st), st
+assert not any(r[1] == "0x20000260" for r in st), "slow state byte moves in both phases and must not be flagged"
+assert os.path.getsize(os.path.join(d3, "phases.csv")) > 0 and os.path.getsize(os.path.join(d3, "stimulus.csv")) > 0
+print(sw.summary(w3, w3.activity_rows(), top=3))
 
 print("all swd_watch tests passed")
