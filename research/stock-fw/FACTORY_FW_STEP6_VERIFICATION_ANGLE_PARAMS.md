@@ -88,11 +88,14 @@ Other struct fields identified (all B): `+0x00` direction (±1), `+0x01` Hall-fa
 | Repetition counter | 1 | `strb r5,[sp,#0x3A]` |
 | CH0–2 | PWM mode `0x60`, initial compare 1125, output + complementary output enabled | `0x08004E88–E9A` |
 | CH3 | PWM mode 2 (`0x70`), compare 2249 | `0x08004ED0–EDE` |
-| Output-compare preload | four helper calls with argument 8 (the SPL "preload enable" value); helper bodies not read | `0x08004EFC–F18` |
+| Output-compare preload | four helper calls with argument 8. Bodies of `0x080057BC` (CCMR1 bit 3, CH0) and `0x08005848` (CCMR1 bit 11, CH1) were read and set the OC preload bits; `0x080058D8` and `0x08005940` (presumably CH2/CH3 in CCMR2) were not read | `0x08004EFC–F18` |
+| Output pins | `GPIOA` pins 8–10 and `GPIOB` pins 13–15 (`0x48000000` / `0x48000400`), alternate-function mode, speed 3, alternate function 2 (TIMER0 CH0–2 and CH0N–2N on this part) | `0x08004DCA–E52` |
+| Channel polarity / idle | CHx polarity field 0; **CHxN polarity field `0x8` (SPL "OCN polarity low", CCxNP set)**; both idle-state fields 0. Field positions confirmed by the masks in `0x08005740` (`bic #8` then OR of `[+0xE]`; CTL1 bits `0x100/0x200` cleared and ORed with `[+0x10]/[+0x12]`) | `0x08004E88–EAE`, `0x08005740–AA` |
+| TRGO | `0x08005968` sets CTL1 bits 6:4 to `0x20` (update event as master trigger) | `0x08004F4A` |
 | BDTR value | `0x0C1C` = OSSR `0x800` \| OSSI `0x400` \| dead-time field `0x1C`; lock 0, **break disabled (BRKEN=0)**, break polarity 0, automatic output enable off | struct at `0x08004F22–3E`, applied by `0x08005524` (`strh [TIM0+0x44]`) |
 | POEN | set/cleared only by `0x080055E0` (bit 15) | helper body |
 
-Derived: with a 72 MHz timer clock, dead-time ≈ 28 × (2/72 MHz) ≈ **0.78 µs**. The structure layouts follow the standard SPL conventions; only the BDTR helper body was read, so channel polarity and idle-state fields (CH high, CHN low, idle reset) are decoded from the init structure, not from the OC helper bodies. No other write to the BDTR register was found, but nine other `#0x44` stores in the image (e.g. `0x080012B4`, `0x08003CBC`, `0x0800405E`) were not individually traced to their bases; most sit in code far from any TIMER0 literal and are probably RAM-structure fields. **Hardware break is not used by the stock firmware** as far as this pass shows; protection is software (state machine, demand limiter, ADC-side logic).
+Confirmed in this pass: `r6=2`, `r7=0x800`, so the BDTR struct is `0x800 | 0x400 | 0 | 0x1C | 0 | 0 | 0` and `0x08005524` simply ORs the seven fields and stores to `[TIM0+0x44]`. Derived: with a 72 MHz timer clock, dead-time ≈ 28 × (2/72 MHz) ≈ **0.78 µs**. The structure layouts follow the standard SPL conventions. The CHxN polarity value is decoded; what it means at the pin (whether high- and low-side gate signals are in or out of phase before dead-time, and what the gate drivers expect) depends on the GD32 timer's polarity logic and on the board's driver stage, so **it is a bench item: scope the six gate signals with the output stage unpowered before any stock-equivalent code is run**. The 72 MHz timer clock itself is inferred (ARR 2250 centre-aligned gives 16 kHz at 72 MHz) and is not independently read from the RCU setup. No other write to the BDTR register was found, but nine other `#0x44` stores in the image (e.g. `0x080012B4`, `0x08003CBC`, `0x0800405E`) were not individually traced to their bases; most sit in code far from any TIMER0 literal and are probably RAM-structure fields. **Hardware break is not used by the stock firmware** as far as this pass shows; protection is software (state machine, demand limiter, ADC-side logic).
 
 ## 6. A and A2: the dump damage is a block-read artifact, and master code equals slave code
 
@@ -143,6 +146,14 @@ Phase 1 left the end-of-image bytes unresolved. Four code sites reference `0x080
 
 B's slots 8–9 (`0x0400`, `0x4800`) together form `0x48000400`, the GPIOB base address, which looks like uninitialised stack contents written to flash. That is consistent with `0x2000021E` being clear on the slave and set on the master; it is not proven. `0x2000021E` has 18 literal references in B and also gates a battery-voltage filter (see §8). Its writer was not traced. The RAM addresses of slots 0, 3, 6, 7, 8 and 9 also appear together in a literal pool at `0x08006DF4–0x08006E20`, just before the CRC routine at `0x08006E38`, which suggests the communications code reads or writes them (so some may be host-settable); the owning function was not read, and the semantics of every slot are **unresolved**.
 
+**Update (owner of the slots found).** The literal pool at `0x08006DF4–0x08006E34` belongs to the main loop (`0x08006C5A–0x08006D94`), which polls flag bytes and acts on them:
+
+- One command flag copies three halfwords from `0x200001F8` to `0x20000210` (slots 0–2) and three from `0x200001FE` to `0x20000216` (slots 3–5). It then reads floats at `0x200001CC` and `0x200001C4`, divides each by `100.0` (`0x42C80000`), converts to integer into `0x2000019A` / `0x2000019C` (slots 6 and 7), and calls the flash writer `0x08005370`. Those source buffers are not written by anything in the main loop, which fits a host or communications-handler origin (not traced).
+- Two further flag bytes (`0x20000149`, `0x2000014A`) toggle slots 8 and 9 between zero and a nonzero constant, save, and clear the flag.
+- Slot 9 (`0x2000008C`), when `0x2000021E` is clear, selects the polarity of two `GPIOB` output bits (pins 1 and 2) via the pair of pin set/reset helpers at `0x08002762` / `0x08002766`.
+
+So the page is **host-settable configuration saved on command**, not factory calibration written at manufacture, and slots 8 and 9 behave as flags (nonzero = on). The slave's stack-garbage values for them (`0x0400`, `0x4800`) are therefore harmless in the sense that both are simply nonzero. Which physical quantities slots 0–7 represent is still not named.
+
 Practical consequence for ServoFOC: this page is per-board persistent data in the last KiB of the used flash. Back it up per board before programming over the stock firmware, and do not let an R-series image occupy `0x7C00–0x7FFF` until its meaning is known.
 
 ## 8. Additions to Phase 3 (PA4 / battery path)
@@ -168,7 +179,7 @@ Practical consequence for ServoFOC: this page is per-board persistent data in th
 1. Trace the writers of `0x2000021E`, `0x2000008E`, `0x200000AA`, `0x2000023E`, and the code owning the literal pool at `0x08006DF4–0x08006E20`, to name the ten saved parameters.
 2. Measure or derive the ADC-handler rate (full `ETSIC`/`ETEIC` path), which fixes every "tick" in §4 and §3.
 3. Re-read the master board over SWD three or more times with per-page hashes; recheck A's `0x588C` damage and A2's bit error.
-4. Decode `0x08004AC0` and `0x08004D4C` again against the same ELF wrapper, and read the output-compare helper bodies (`0x08005740`, `0x080057C8`, `0x0800585C`, `0x080058E4`) to confirm channel polarity and idle states.
+4. Decode `0x08004AC0` and `0x08004D4C` again against the same ELF wrapper. (Output-compare init bodies `0x08005740`, `0x080057C8`, `0x0800585C`, `0x080058E4` are now read; remaining: `0x080058D8` and `0x08005940`.)
 5. Resolve PA0/PB0 phase naming and axis polarity, using the angle table above together with a bench measurement.
 
 **Boundary:** static decoding only. No R0.1, R1 or RoboDurden repository change is made or implied, and no stock flash is touched.
