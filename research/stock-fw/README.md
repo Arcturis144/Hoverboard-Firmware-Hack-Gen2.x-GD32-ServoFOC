@@ -64,7 +64,10 @@ Next stages: compare the F130 and F103 reference functions with the factory mast
 - [Phase 2 — interrupt vectors, functions, and A dump consistency](FACTORY_FW_STEP2_DISASSEMBLY.md)
 - [Phase 3 — inserted ADC, shunts, PA6 thermal protection](FACTORY_FW_STEP3_ADC_CURRENT_THERMAL.md)
 - [Phase 4 — TIMER0 synchronization, vector PWM, thermal limiting](FACTORY_FW_STEP4_PWM_ADC_VECTOR_DERATING.md)
+- [Phase 5 — control law, state machine and scheduler](FACTORY_FW_STEP5_CONTROL_LAW_STATE_SCHEDULER.md)
 - [Phase 5 — **reviewed current-loop mathematics and motor-state gating**](FACTORY_FW_STEP5_CURRENT_LOOP_STATES.md) with [machine-readable function map](FACTORY_FW_STEP5_FUNCTION_MAP.csv)
 - [Phase 6 — **B-image verification, rotor-angle generation, TIMER0 configuration, parameter page**](FACTORY_FW_STEP6_VERIFICATION_ANGLE_PARAMS.md) with reproduction script [`analyze_phase6.py`](analyze_phase6.py) (`python3 -I analyze_phase6.py <A> <A2> <B>`; firmware dumps are not committed)
+
+To disassemble a raw dump yourself: `bash research/stock-fw/disasm-stock-bin.sh <dump.bin>` (needs clang, ld.lld, llvm-objdump). Dumps themselves are not committed.
 
 The B/slave original is the primary current decoding baseline; A/master dump integrity is unresolved. All documented function names are reconstructed, and all code addresses refer to **factory B**, not the independently compiled open-source reference. The Phase 5 report distinguishes the stock resistance-threshold demand limiter from any unproven I²R thermal estimator. Research remains read-only and independent of R0.1/R1.
