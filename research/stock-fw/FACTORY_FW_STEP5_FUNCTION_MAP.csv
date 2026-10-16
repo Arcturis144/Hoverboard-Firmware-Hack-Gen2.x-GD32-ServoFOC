@@ -1,0 +1,13 @@
+factory_entry,reconstructed_name,confidence,evidence
+0x08001D28,clarke_two_shunt_q15,high,"Signed current halfwords; constant 0x49E6; second component negated and shifted"
+0x08004274,park_style_forward_rotate,high,"0x08005C00 trigonometry and Q15 sum/difference multiply"
+0x080037E8,pi_controller_with_antiwindup,high,"setpoint-feedback; proportional/integral gains and clamps"
+0x08004858,inverse_rotation,high,"Complementary transform from same trigonometric LUT"
+0x08005C00,quarter_wave_sincos,high,"Quadrant interpolation and 0x080073A6 lookup"
+0x0800252C,current_loop,high,"Reads currents; calls Clarke then rotation; regulator and PWM path"
+0x08004AC0,six_sector_pwm,high,"TBB six sectors; CH0-CH2 compares and CH3=2249"
+0x08003414,motor_state_dispatch,high,"Five-entry TBB indexed from 0x20000260"
+0x08003384,motor_start,high,"Selects TIMER0_CH3 ADC and sets POEN"
+0x080055E0,motor_output_gate,high,"Sets/clears TIMER0 CCHP.POEN bit15"
+0x08003C7C,demand_supervisor,high,"Thermal status checks and internal limit update"
+0x08001708,ntc_like_resistance_faults,high,"PA6 resistance-like formula and 8k/6k fault persistence"

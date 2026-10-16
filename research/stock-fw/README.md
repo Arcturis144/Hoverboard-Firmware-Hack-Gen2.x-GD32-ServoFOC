@@ -56,3 +56,14 @@ Next stages: compare the F130 and F103 reference functions with the factory mast
 **Safety:** The Gen2 source's default `SINGLE` / `REMOTE_DUMMY` mode may command motor rotation. This is a disassembly/reference build only; do not flash or energize a motor with it.
 
 **Provenance:** Source is GPL-3.0 fork-derived code. Keep attribution and check file headers before adapting code to ServoFOC.
+
+
+## Factory firmware decoding reports
+
+- [Phase 1 — initial A/B dump inventory](FACTORY_FW_STEP1_BASELINE.md)
+- [Phase 2 — interrupt vectors, functions, and A dump consistency](FACTORY_FW_STEP2_DISASSEMBLY.md)
+- [Phase 3 — inserted ADC, shunts, PA6 thermal protection](FACTORY_FW_STEP3_ADC_CURRENT_THERMAL.md)
+- [Phase 4 — TIMER0 synchronization, vector PWM, thermal limiting](FACTORY_FW_STEP4_PWM_ADC_VECTOR_DERATING.md)
+- [Phase 5 — **reviewed current-loop mathematics and motor-state gating**](FACTORY_FW_STEP5_CURRENT_LOOP_STATES.md) with [machine-readable function map](FACTORY_FW_STEP5_FUNCTION_MAP.csv)
+
+The B/slave original is the primary current decoding baseline; A/master dump integrity is unresolved. All documented function names are reconstructed, and all code addresses refer to **factory B**, not the independently compiled open-source reference. The Phase 5 report distinguishes the stock resistance-threshold demand limiter from any unproven I²R thermal estimator. Research remains read-only and independent of R0.1/R1.
