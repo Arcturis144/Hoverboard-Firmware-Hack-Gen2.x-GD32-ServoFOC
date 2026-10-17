@@ -68,6 +68,7 @@ Next stages: compare the F130 and F103 reference functions with the factory mast
 - [Phase 5 — **reviewed current-loop mathematics and motor-state gating**](FACTORY_FW_STEP5_CURRENT_LOOP_STATES.md) with [machine-readable function map](FACTORY_FW_STEP5_FUNCTION_MAP.csv)
 - [Phase 6 — **B-image verification, rotor-angle generation, TIMER0 configuration, parameter page**](FACTORY_FW_STEP6_VERIFICATION_ANGLE_PARAMS.md) with reproduction script [`analyze_phase6.py`](analyze_phase6.py) (`python3 -I analyze_phase6.py <A> <A2> <B>`; firmware dumps are not committed)
 - [Phase 7 — **UART link: Modbus-style framing, function 0x78, parameter-page owner**](FACTORY_FW_STEP7_UART_MODBUS_LINK.md) with check script [`analyze_phase7_uart.py`](analyze_phase7_uart.py) and the capture tools in [`sniffer-v9/`](sniffer-v9/) (sketch untested on hardware)
+- [Phase 8 — **cross-check against hoverboardhavoc's Rust re-implementation of the same vendor firmware**](FACTORY_FW_STEP8_HOVERBOARDHAVOC_CROSSCHECK.md) with table/literal check script [`analyze_phase8.py`](analyze_phase8.py) (`python3 -I analyze_phase8.py <B>`; not yet run on the real B image)
 
 Live-board tools (all read-only, none tested on hardware yet): [`sniffer-v9/`](sniffer-v9/) (UART capture and parser), [`swd-watch/`](swd-watch/) (non-halting SWD RAM/PC sampling), and [`session/`](session/) (one key press labels both so stimulus responses stand out).
 
