@@ -131,18 +131,20 @@ Phase 1 left the end-of-image bytes unresolved. Four code sites reference `0x080
 - `0x08005370` gathers the same fields, erases the page, and programs 10 halfwords (writer `0x08002674`; FMC unlock `0x080024D8`, program via `FMC_CTL` PG at `0x080024BA`, lock `0x08002494`).
 - Slots 8 and 9 are saved and restored **only if the byte at `0x2000021E` is nonzero**. When it is zero, the stack slots that would carry them are never filled.
 
-| Slot | RAM destination | B (slave) | A2 (master) |
+| Slot | RAM destination | B (slave) | Master (A and A2 agree) |
 |---|---|---:|---:|
 | 0 | `0x20000210` | 102 | 46 |
 | 1 | `0x20000212` | −60 | −141 |
-| 2 | `0x20000214` | 8131 | 46 |
-| 3 | `0x20000216` | 11 | −141 |
-| 4 | `0x20000218` | 2 | 8400 |
-| 5 | `0x2000021A` | −42 | −1 |
-| 6 | `0x2000019A` | −71 | −24 |
-| 7 | `0x2000019C` | −38 | −75 |
-| 8 | `0x2000008A` | 1024 | −34 |
-| 9 | `0x2000008C` | 18432 | −99 |
+| 2 | `0x20000214` | 8131 | 8400 |
+| 3 | `0x20000216` | 11 | −1 |
+| 4 | `0x20000218` | 2 | −24 |
+| 5 | `0x2000021A` | −42 | −75 |
+| 6 | `0x2000019A` | −71 | −34 |
+| 7 | `0x2000019C` | −38 | −99 |
+| 8 | `0x2000008A` | 1024 | −1 (0xFFFF) |
+| 9 | `0x2000008C` | 18432 | −1 (0xFFFF) |
+
+**Correction (Phase 8):** the master column originally listed `46, −141, 46, −141, 8400, −1, −24, −75, −34, −99`. That started the page at the word at `0x7BFC`, which is block-end padding (a copy of the word at `0x7C00`), and so shifted slots 2–9. The values above start at `0x7C00`, where the two master reads agree. The result also fits B better (slot 2 is ≈ 8000 on both boards; slots 5–7 are negative on both). Slots 8–9 on the master are `0xFFFF` in both reads: either the stored flag values or never-programmed flash.
 
 B's slots 8–9 (`0x0400`, `0x4800`) together form `0x48000400`, the GPIOB base address, which looks like uninitialised stack contents written to flash. That is consistent with `0x2000021E` being clear on the slave and set on the master; it is not proven. `0x2000021E` has 18 literal references in B and also gates a battery-voltage filter (see §8). Its writer was not traced. The RAM addresses of slots 0, 3, 6, 7, 8 and 9 also appear together in a literal pool at `0x08006DF4–0x08006E20`, just before the CRC routine at `0x08006E38`, which suggests the communications code reads or writes them (so some may be host-settable); the owning function was not read, and the semantics of every slot are **unresolved**.
 

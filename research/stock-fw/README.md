@@ -66,12 +66,14 @@ Next stages: compare the F130 and F103 reference functions with the factory mast
 - [Phase 4 — TIMER0 synchronization, vector PWM, thermal limiting](FACTORY_FW_STEP4_PWM_ADC_VECTOR_DERATING.md)
 - [Phase 5 — control law, state machine and scheduler](FACTORY_FW_STEP5_CONTROL_LAW_STATE_SCHEDULER.md)
 - [Phase 5 — **reviewed current-loop mathematics and motor-state gating**](FACTORY_FW_STEP5_CURRENT_LOOP_STATES.md) with [machine-readable function map](FACTORY_FW_STEP5_FUNCTION_MAP.csv)
-- [Phase 6 — **B-image verification, rotor-angle generation, TIMER0 configuration, parameter page**](FACTORY_FW_STEP6_VERIFICATION_ANGLE_PARAMS.md) with reproduction script [`analyze_phase6.py`](analyze_phase6.py) (`python3 -I analyze_phase6.py <A> <A2> <B>`; firmware dumps are not committed)
+- [Phase 6 — **B-image verification, rotor-angle generation, TIMER0 configuration, parameter page**](FACTORY_FW_STEP6_VERIFICATION_ANGLE_PARAMS.md) with reproduction script [`analyze_phase6.py`](analyze_phase6.py) (`python3 -I analyze_phase6.py <A> <A2> <B>`; the dumps are in [`firmware/original/`](firmware/original/))
 - [Phase 7 — **UART link: Modbus-style framing, function 0x78, parameter-page owner**](FACTORY_FW_STEP7_UART_MODBUS_LINK.md) with check script [`analyze_phase7_uart.py`](analyze_phase7_uart.py) and the capture tools in [`sniffer-v9/`](sniffer-v9/) (sketch untested on hardware)
 - [Phase 8 — **cross-check against hoverboardhavoc's Rust re-implementation of the same vendor firmware**](FACTORY_FW_STEP8_HOVERBOARDHAVOC_CROSSCHECK.md) with table/literal check script [`analyze_phase8.py`](analyze_phase8.py) (`python3 -I analyze_phase8.py <B>`; not yet run on the real B image)
 
+- [Phase 8 — **rebuilding the master image from its two damaged reads**](FACTORY_FW_STEP8_MASTER_RECONSTRUCTION.md); images and provenance in [`firmware/`](firmware/) (reconstruction is a research aid, never to be flashed)
+
 Live-board tools (all read-only, none tested on hardware yet): [`sniffer-v9/`](sniffer-v9/) (UART capture and parser), [`swd-watch/`](swd-watch/) (non-halting SWD RAM/PC sampling), and [`session/`](session/) (one key press labels both so stimulus responses stand out).
 
-To disassemble a raw dump yourself: `bash research/stock-fw/disasm-stock-bin.sh <dump.bin>` (needs clang, ld.lld, llvm-objdump). Dumps themselves are not committed.
+To disassemble a raw dump yourself: `bash research/stock-fw/disasm-stock-bin.sh <dump.bin>` (needs clang, ld.lld, llvm-objdump). The original dumps and a reconstructed master image are in [`firmware/`](firmware/).
 
 The B/slave original is the primary current decoding baseline; A/master dump integrity is unresolved. All documented function names are reconstructed, and all code addresses refer to **factory B**, not the independently compiled open-source reference. The Phase 5 report distinguishes the stock resistance-threshold demand limiter from any unproven I²R thermal estimator. Research remains read-only and independent of R0.1/R1.
