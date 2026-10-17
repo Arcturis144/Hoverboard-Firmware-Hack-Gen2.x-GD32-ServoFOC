@@ -166,7 +166,10 @@ def main(pa, pa2, pb):
 
     print("\n== 6. persistent parameter page: 10 x int16 at 0x08007C00 (B)")
     pbv = struct.unpack("<10h", B[0x7C00:0x7C14])
-    off = A2.find(bytes.fromhex("2e0073ff2e0073ff"))
+    # Master page: the raw reads A and A2 agree at 0x7C00; the word at 0x7BFC in both is block-end padding
+    # (a copy of the next block's first word), not page data. Corrected in Phase 8; Phase 6 originally
+    # started the page at that padding word and so shifted every master slot from index 2 on.
+    off = 0x7C00 if A[0x7C00:0x7C14] == A2[0x7C00:0x7C14] else -1
     pav = struct.unpack("<10h", A2[off:off + 20]) if off >= 0 else None
     check("loader destination base literal at 0x08005360 = 0x20000210", u32(B, 0x08005360) == 0x20000210)
     check("flag literal at 0x08005364 = 0x2000021E; slots 8/9 -> 0x2000008A / 0x2000008C",
@@ -177,8 +180,8 @@ def main(pa, pa2, pb):
         print("  %2d   0x%08X   %8d   %s" % (i, d, pbv[i], pav[i] if pav else "n/a"))
     check("B's last two halfwords = 0x0400,0x4800 = GPIOB base 0x48000400 (stack-leak signature)",
           struct.unpack("<I", B[0x7C10:0x7C14])[0] == 0x48000400)
-    if off >= 0:
-        print("  A2 page located at A2 offset 0x%04X (B has it at 0x7C00; the 4-byte offset is a dump slip)" % off)
+    check("raw A and A2 agree on the master page at 0x7C00; 0x7BFC holds the same word as 0x7C00 (padding)",
+          off >= 0 and A[0x7BFC:0x7C00] == A[0x7C00:0x7C04] and A2[0x7BFC:0x7C00] == A2[0x7C00:0x7C04])
 
     print("\nRESULT: %s" % ("all checks passed" if not FAILS else "%d FAILED: %s" % (len(FAILS), "; ".join(FAILS))))
     return 1 if FAILS else 0
