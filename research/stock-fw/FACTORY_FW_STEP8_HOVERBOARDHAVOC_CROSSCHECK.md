@@ -2,7 +2,7 @@
 
 **Analysis date:** 2026-10-17. **Scope:** read-only comparison of the Phase 3–6 reconstructions with an independent, host-tested re-implementation of the same vendor firmware. No firmware was flashed, no hardware was energized, and nothing on `servo/r0-baseline`, R0.1 or R1 changed.
 
-**Method and its limit.** This phase compares *documents against code*: the Phase 3–6 reports in this folder against hoverboardhavoc's Rust source. The factory dumps were not available to this pass, so nothing below re-reads the B image. Where his code makes a claim that the B image can settle, it is listed as a check, either automated in [`analyze_phase8.py`](analyze_phase8.py) (`python3 -I analyze_phase8.py <B>`, **not yet run on the real B image**; tested only on synthetic images) or as a manual instruction check in §7.
+**Method and its limit.** This phase compares *documents against code*: the Phase 3–6 reports in this folder against hoverboardhavoc's Rust source. The factory dumps were not available to this pass, so nothing below re-reads the B image. Where his code makes a claim that the B image can settle, it is listed as a check, either automated in [`analyze_phase8.py`](analyze_phase8.py) (`python3 -I analyze_phase8.py <B>`; **passed on `oriFWB.bin` on 2026-10-19**: all table and literal checks agree with his code) or as a manual instruction check in §7.
 
 All factory addresses are **factory B (slave)** addresses, as in Phases 3–6. Reconstructed names are not factory symbols.
 
@@ -178,7 +178,7 @@ These follow from Phases 3–6 and this cross-check together:
 | Same vendor firmware family | High | 15+ exact constant and table matches; table layout fits B's addresses |
 | Addresses do not transfer | High | His hall routine `0x080070B4` vs B's `0x08002808`/`0x08006A3C` |
 | Clarke, rotations, PI, offsets, hall angles, interpolation formula match | High | Identical constants and arithmetic in both |
-| Circular-limit table contents | Moderate until `analyze_phase8.py` passes on B | Exact-fit layout; values from his code only |
+| Circular-limit table contents | High | `analyze_phase8.py` passes on `oriFWB.bin` (2026-10-19): all 67 entries equal his table |
 | Phase 6 reading of `0x08003560` is the correct one | Moderate | It explains his port's failure and fits stock being able to drive; instruction check pending |
 | Hall debounce needs the OR rule | Moderate | His bench failure with the plain rule plus three cited sources; B instruction check pending |
 | Speed window 3,201 vs 320 | **Unresolved** | One of the two decodes is wrong, or the builds differ |
