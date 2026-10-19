@@ -17,6 +17,10 @@ All factory addresses are **factory B (slave)** addresses, as in Phases 3–6. R
 
 **What his source is.** His comments cite a private decompile of a *"board20 master GD32F130"* image and *"both offroad images"* (paths under `~/dev/BalanceAgain/` and `~/dev/Declassyfied/`), plus a `specs/` folder that is not published in any branch. None of the stock images or decompiles are public.
 
+**Same MCU as the G5.** The GD32F130 is one of his two target families (his README: one image for GD32F103/STM32F103 and GD32F130 mainboards), and his stock decompile is itself of a **GD32F130** master. His bench pair is an **F103 master** and an **F130 slave** (`motor.rs` line 2134). So his work is not an F103 port that happens to resemble the G5: the stock source he decoded runs on the G5's MCU. Which bench findings were checked on which chip is listed in §3.5.
+
+**His F130 slave is a different board layout from the G5.** It senses phase current on **PB0/PB1** (channels 8/9, `motor.rs` line 2134); G5 B uses **PA0/PB0** (channels 0/8, Phase 3). This matches the `PB0/PB1` in the open-source `defines_2-1-20.h` that Phase 3 flagged as disagreeing with B. That header is therefore probably right for some F130 boards and wrong for the G5, rather than simply wrong. Pin assignments must come from each board, not from his configs.
+
 **Same vendor code, different build.** The constants below match B exactly, so this is the same firmware family. The addresses do not: his hall-read routine is `FUN_080070b4` in his image, while B's hall code is at `0x08002808` / `0x08006A3C`. **Do not transfer any address from his comments to B.** Data (tables, constants, formulas) transfers; locations do not.
 
 **Licence.** His code is GPL-3.0-or-later. This phase only compares and cites it. Copying code from it into ServoFOC would make ServoFOC GPL-3.0 too.
@@ -95,7 +99,16 @@ Both readings agree on the formula, the ±5461 (±30°) lead word, the 85/15 per
 
 Phase 3/4 found a pattern without explaining it: calibration uses a **software** injected start (`ETSIC = 7`), running mode switches to the **CH3 event** (`ETSIC = 1`) only at motor start-up (state 1), and the TIMER0 update interrupt sets `ETEIC` every period.
 
-His bench notes (`motor.rs` lines 783–792 and 1340–1347, F103 master, 2026-07-26) account for all three:
+His bench notes (`motor.rs` lines 783–792, 1312–1326 and 1340–1347, 2026-07-26) account for all three. Which chip each finding was measured on:
+
+| Finding | Measured on | Source |
+|---|---|---|
+| CH3 channel link (`ETSIC = 1`) gives no conversions while disarmed | **Both F103 and F130** ("converted on neither family") | line 1342 |
+| A once-only `ETEIC` can lose the start-up race | F103 master only | lines 783–785 |
+| A 1-tick trigger (compare 2249 via TRGO) is not latched | F103 master only; "the F1x0's latch behavior is unmeasured" | lines 1312–1326 |
+| `PERIOD − 50` trigger converts | Both (F130: "it converts at this width") | line 1326 |
+
+The findings:
 
 - **The CH3 channel link (`ETSIC = 1`) rides the CH3 output, which the main output enable gates.** With the bridge disarmed it produces no conversions. That is why stock must calibrate with a software start, and can only switch to `ETSIC = 1` in the state that enables `POEN`.
 - **The stock firmware never relies on a one-time `ETEIC`.** It re-asserts the bit every PWM period. On his board a once-only `ETEIC` started the group on 4 of 4 power-ups with one build and 0 of 2 with another build of the same source.
